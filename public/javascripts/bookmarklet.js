@@ -30,7 +30,7 @@ load_jq.try_ready = function(time_elapsed) {
 }
 
 load_socketio = function() {
-  load_js("http://" + HOST + "/socket.io/socket.io.js",load_socketio.try_ready)
+  load_js("http://e-lite.org:3000/socket.io/socket.io.js",load_socketio.try_ready)
 }
 load_socketio.try_ready = function(time_elapsed) {
   if (typeof io == "undefined") {
