@@ -1,6 +1,3 @@
-var HOST = 'e-lite.org:3000';
-var HOSTNAME = 'e-lite.org';
-
 var load_dep = {};
 load_dep.start = function(next) {
   this.next = next;
@@ -45,7 +42,7 @@ load_socketio.try_ready = function(time_elapsed) {
 load_css = function() {
   var css = document.createElement('link');
   css.setAttribute('rel','stylesheet');
-  css.setAttribute('href','http://' + HOST + '/stylesheets/bookmarklet.css');
+  css.setAttribute('href','http://e-lite.org:3000/stylesheets/bookmarklet.css');
   document.getElementsByTagName('head')[0].appendChild(css);
   load_dep.loaded(load_css);
 }
@@ -71,7 +68,7 @@ function Graphedia() {
 Graphedia.prototype.setup_socket = function() {
   var g = this;
   
-  g.socket = io.connect('http://' + HOSTNAME,3000);
+  g.socket = io.connect('http://e-lite.org',3000);
   g.socket.emit('init', { url: document.URL })
 }
 Graphedia.prototype.add_markup = function() {
