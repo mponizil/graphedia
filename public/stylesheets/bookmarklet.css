@@ -1,6 +1,6 @@
 #graphedia_container {
   position:relative;
-  z-index:9999;
+  z-index:2147483647;
   font:14px 'Lucida Grande',Helvetica,Arial,sans-serif;
 }
 #graphedia_container input[type='text'],

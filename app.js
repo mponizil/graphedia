@@ -1,7 +1,8 @@
-var express = require('express');
-require('joose')
-require('joosex-namespace-depended')
-require('hash')
+var express = require('express'),
+    fs = require('fs');
+require('joose');
+require('joosex-namespace-depended');
+require('hash');
 
 var app = module.exports = express.createServer();
 
@@ -44,6 +45,14 @@ app.get('/webpage', function(req, res) {
 app.get('/bookmarklet', function(req, res) {
   res.render('bookmarklet', { url: URL });
 });
+app.get('/js/bookmarklet.js', function(req, res) {
+  fs.readFile(__dirname + '/js/bookmarklet.js', 'utf8', function(err, data) {
+    data = data.replace(/#{url}/,"'" + URL + "'")
+    res.writeHead(200, {'Content-Type':'text/javascript'});
+    res.write(data, 'utf8');
+    res.end();
+  })
+})
 
 app.listen(PORT);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
