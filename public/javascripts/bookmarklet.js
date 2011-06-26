@@ -1,3 +1,6 @@
+var HOST = 'e-lite.org:3000';
+var HOSTNAME = 'e-lite.org';
+
 var load_dep = {};
 load_dep.start = function(next) {
   this.next = next;
@@ -30,7 +33,7 @@ load_jq.try_ready = function(time_elapsed) {
 }
 
 load_socketio = function() {
-  load_js("http://e-lite.org:3000/socket.io/socket.io.js",load_socketio.try_ready)
+  load_js("http://" + HOST + "/socket.io/socket.io.js",load_socketio.try_ready)
 }
 load_socketio.try_ready = function(time_elapsed) {
   if (typeof io == "undefined") {
@@ -42,7 +45,7 @@ load_socketio.try_ready = function(time_elapsed) {
 load_css = function() {
   var css = document.createElement('link');
   css.setAttribute('rel','stylesheet');
-  css.setAttribute('href','http://e-lite.org:3000/stylesheets/bookmarklet.css');
+  css.setAttribute('href','http://' + HOST + '/stylesheets/bookmarklet.css');
   document.getElementsByTagName('head')[0].appendChild(css);
   load_dep.loaded(load_css);
 }
@@ -63,19 +66,26 @@ function init() {
 function Graphedia() {
   this.socket = null;
   this.container = null;
+  this.url = null;
 }
 
 Graphedia.prototype.setup_socket = function() {
   var g = this;
   
-  g.socket = io.connect('http://e-lite.org',3000);
-  g.socket.emit('init', { url: document.URL })
+  g.socket = io.connect('http://' + HOSTNAME, 3000);
+  g.socket.emit('init', document.URL);
+  
+  g.socket.on('comment.new',function(data) {
+    g.add_comment(data.x,data.y,data.comment);
+  })
 }
 Graphedia.prototype.add_markup = function() {
   var g = this;
   
   var gcont = g.container = $('<div>').attr('id','graphedia_container');
   $('body').prepend(gcont);
+  
+  var enabled = $('<div>',{class:enabled});
   
   $(window).click(function(e) {
     if(e.shiftKey) g.create_comment(e.pageX, e.pageY);
@@ -94,22 +104,24 @@ Graphedia.prototype.create_comment = function(x,y) {
   var submit = $('<input>',{type:'submit',name:'submit',value:'Post'});
   g.container.append(new_comment);
   new_comment.append(form);
-  form.append(textarea,submit);
+  form.append(textarea,$('<br>'),submit);
   textarea.focus();
   
   form.submit(function() {
-    console.log(textarea.val())
-    return false
+    g.socket.emit('comment.new', { x: x, y: y, comment: textarea.val() }, function(data) {
+      console.log(data);
+    })
+    return false;
   })
 }
-Graphedia.prototype.add_comment = function() {
+Graphedia.prototype.add_comment = function(x,y,comment) {
   var g = this;
   
   var comment = $('<div>',{class:'comment'}).css({
     'position': 'absolute',
-    'top': '550px',
-    'left': '20px'
-  }).html("here is a comment");
+    'top': y+'px',
+    'left': x+'px'
+  }).html(comment);
   
   g.container.append(comment);
 }

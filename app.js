@@ -54,8 +54,31 @@ io.set('log level',2)
 var pages = [];
 
 io.sockets.on('connection', function(socket) {
-  socket.on('init', function(data) {
-    console.log(data.url);
-    console.log(Hash.md5(data.url))
+  var graphedia = new Graphedia(socket);
+  
+  socket.on('init', function(url) {
+    graphedia.init(url)
+  })
+  socket.on('comment.new', function(data) {
+    graphedia.new_comment(data);
   })
 })
+
+function Graphedia(socket) {
+  this.url = null;
+  this.hashed_url = null;
+  this.socket = socket;
+}
+Graphedia.prototype.init = function(url) {
+  var g = this;
+  
+  g.url = url;
+  g.hashed_url = Hash.md5(url);
+  
+  g.socket.join(g.hashed_url);
+}
+Graphedia.prototype.new_comment = function(data) {
+  var g = this;
+  
+  g.socket.broadcast.to(g.hashed_url).emit('comment.new',{ x: data.x, y: data.y, comment: data.comment});
+}
