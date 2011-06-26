@@ -30,7 +30,7 @@ load_jq.try_ready = function(time_elapsed) {
 }
 
 load_socketio = function() {
-  load_js("http://e-lite.org:3000/socket.io/socket.io.js",load_socketio.try_ready)
+  load_js("http://" + document.URL + "/socket.io/socket.io.js",load_socketio.try_ready)
 }
 load_socketio.try_ready = function(time_elapsed) {
   if (typeof io == "undefined") {
@@ -42,7 +42,7 @@ load_socketio.try_ready = function(time_elapsed) {
 load_css = function() {
   var css = document.createElement('link');
   css.setAttribute('rel','stylesheet');
-  css.setAttribute('href','http://e-lite.org:3000/stylesheets/bookmarklet.css');
+  css.setAttribute('href','http://' + document.URL + '/stylesheets/bookmarklet.css');
   document.getElementsByTagName('head')[0].appendChild(css);
   load_dep.loaded(load_css);
 }
@@ -68,7 +68,7 @@ function Graphedia() {
 Graphedia.prototype.setup_socket = function() {
   var g = this;
   
-  g.socket = io.connect('http://e-lite.org',3000);
+  g.socket = io.connect('http://' + document.HOST,3000);
   g.socket.emit('init', { url: document.URL })
 }
 Graphedia.prototype.add_markup = function() {

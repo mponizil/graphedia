@@ -15,12 +15,22 @@ app.configure(function(){
   app.use(express.static(__dirname + '/public'));
 });
 
+var HOST, PORT, URL;
+
 app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  
+  HOST = 'localhost';
+  PORT = 3000;
+  URL = HOST + ':' + PORT;
 });
 
 app.configure('production', function(){
-  app.use(express.errorHandler()); 
+  app.use(express.errorHandler());
+  
+  HOST = 'e-lite.org';
+  PORT = 3000;
+  URL = HOST + ':' + PORT;
 });
 
 // routes
@@ -31,10 +41,10 @@ app.get('/webpage', function(req, res) {
   res.render('webpage');
 });
 app.get('/bookmarklet', function(req, res) {
-  res.render('bookmarklet');
+  res.render('bookmarklet', { url: URL });
 });
 
-app.listen(3000);
+app.listen(PORT);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 
 var io = require('socket.io').listen(app);
