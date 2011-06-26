@@ -1,5 +1,5 @@
-var HOST = 'localhost:3000';
-var HOSTNAME = 'localhost';
+var HOST = 'e-lite.org:3000';
+var HOSTNAME = 'e-lite.org';
 
 var load_dep = {};
 load_dep.start = function(next) {
