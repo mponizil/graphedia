@@ -3,7 +3,7 @@ var URL = #{url};
 var load_dep = {};
 load_dep.start = function(next) {
   this.next = next;
-  for(i in dep_needed) dep_needed[i]();
+  for(i=0;i<dep_needed.length;i++) dep_needed[i]();
 }
 load_dep.loaded = function(which) {
   dep_loaded.push(which);
@@ -25,7 +25,7 @@ load_jq = function() {
   load_js("https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js",load_jq.try_ready)
 }
 load_jq.try_ready = function(time_elapsed) {
-  if (typeof $ == "undefined") {
+  if (typeof jQuery == "undefined") {
     if (time_elapsed <= 5000) setTimeout("load_jq.try_ready(" + (time_elapsed + 200) + ")", 200);
     else alert("Timed out while loading jQuery.")
   } else { load_dep.loaded(load_jq); }
