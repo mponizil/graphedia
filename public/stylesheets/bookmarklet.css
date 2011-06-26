@@ -1,10 +1,9 @@
 #graphedia_container {
+  position:relative;
   z-index:9999;
 }
 #graphedia_container .new-comment {
   position:absolute;
-  top:0;
-  right:0;
 }
 #graphedia_container .comment {
   width:400px;

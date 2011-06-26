@@ -30,7 +30,7 @@ load_jq.try_ready = function(time_elapsed) {
 }
 
 load_socketio = function() {
-  load_js("/socket.io/socket.io.js",load_socketio.try_ready)
+  load_js("http://localhost:3000/socket.io/socket.io.js",load_socketio.try_ready)
 }
 load_socketio.try_ready = function(time_elapsed) {
   if (typeof io == "undefined") {
@@ -42,7 +42,7 @@ load_socketio.try_ready = function(time_elapsed) {
 load_css = function() {
   var css = document.createElement('link');
   css.setAttribute('rel','stylesheet');
-  css.setAttribute('href','/stylesheets/bookmarklet.css');
+  css.setAttribute('href','http://localhost:3000/stylesheets/bookmarklet.css');
   document.getElementsByTagName('head')[0].appendChild(css);
   load_dep.loaded(load_css);
 }
@@ -77,26 +77,35 @@ Graphedia.prototype.add_markup = function() {
   var gcont = g.container = $('<div>').attr('id','graphedia_container');
   $('body').prepend(gcont);
   
-  var new_comment_cont = $('<div>').addClass('new-comment');
-  var new_comment_checkbox = $('<input>',{type:'checkbox',name:'new_comment',id:'new_comment'});
-  var new_comment_label = $('<label>',{for:'new_comment'}).html("new comment");
-  new_comment_cont.append(new_comment_checkbox,new_comment_label);
-  gcont.append(new_comment_cont);
-  
   $(window).click(function(e) {
-    var new_comment = (new_comment_checkbox.attr('checked')
-                      && e.target != new_comment_checkbox[0]
-                      && e.target != new_comment_label[0]);
-    if(new_comment) g.create_comment(e.pageX, e.pageY);
+    if(e.shiftKey) g.create_comment(e.pageX, e.pageY);
   })
 }
 Graphedia.prototype.create_comment = function(x,y) {
-  console.log('create comment at: ', x, y)
+  var g = this;
+  
+  // remove old unsubmitted comment forms
+  $('.new-comment').remove();
+  
+  // add new comment form
+  var new_comment = $('<div>',{class:'new-comment'}).css({top:y,left:x});
+  var form = $('<form>',{name:'new_comment'});
+  var textarea = $('<textarea>',{name:'new_comment'});
+  var submit = $('<input>',{type:'submit',name:'submit',value:'Post'});
+  g.container.append(new_comment);
+  new_comment.append(form);
+  form.append(textarea,submit);
+  textarea.focus();
+  
+  form.submit(function() {
+    console.log(textarea.val())
+    return false
+  })
 }
 Graphedia.prototype.add_comment = function() {
   var g = this;
   
-  var comment = $('<div>').addClass('comment').css({
+  var comment = $('<div>',{class:'comment'}).css({
     'position': 'absolute',
     'top': '550px',
     'left': '20px'
