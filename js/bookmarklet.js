@@ -84,8 +84,6 @@ Graphedia.prototype.add_markup = function() {
   var gcont = g.container = $('<div>').attr('id','graphedia_container');
   $('body').prepend(gcont);
   
-  var enabled = $('<div>',{class:enabled});
-  
   $(window).click(function(e) {
     if(e.shiftKey) g.create_comment(e.pageX, e.pageY);
   })
@@ -97,7 +95,7 @@ Graphedia.prototype.create_comment = function(x,y) {
   $('.new-comment').remove();
   
   // add new comment form
-  var new_comment = $('<div>',{class:'new-comment'}).css({top:y,left:x});
+  var new_comment = $('<div>').addClass('new-comment').css({top:y,left:x});
   var form = $('<form>',{name:'new_comment'});
   var textarea = $('<textarea>',{name:'new_comment'});
   var submit = $('<input>',{type:'submit',name:'submit',value:'Post'});
@@ -116,7 +114,7 @@ Graphedia.prototype.create_comment = function(x,y) {
 Graphedia.prototype.add_comment = function(x,y,comment) {
   var g = this;
   
-  var comment = $('<div>',{class:'comment'}).css({
+  var comment = $('<div>').addClass('comment').css({
     'position': 'absolute',
     'top': y+'px',
     'left': x+'px'
