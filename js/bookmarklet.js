@@ -97,16 +97,20 @@ Graphedia.prototype.create_comment = function(x,y) {
   // add new comment form
   var new_comment = $('<div>').addClass('new-comment').css({top:y,left:x});
   var form = $('<form>',{name:'new_comment'});
-  var textarea = $('<textarea>',{name:'new_comment'});
+  var message = $('<input>',{type:'text',name:'new_comment'});
   var submit = $('<input>',{type:'submit',name:'submit',value:'Post'});
   g.container.append(new_comment);
   new_comment.append(form);
-  form.append(textarea,$('<br>'),submit);
-  textarea.focus();
+  form.append(message,$('<br>'),submit);
+  message.focus();
   
   form.submit(function() {
-    g.socket.emit('comment.new', { x: x, y: y, comment: textarea.val() }, function(data) {
-      console.log(data);
+    var comment = message.val();
+    g.socket.emit('comment.new', { x: x, y: y, comment: comment }, function(data) {
+      if(data.success) {
+        new_comment.remove();
+        g.add_comment(x,y,comment)
+      }
     })
     return false;
   })

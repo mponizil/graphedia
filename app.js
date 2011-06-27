@@ -68,8 +68,8 @@ io.sockets.on('connection', function(socket) {
   socket.on('init', function(url) {
     graphedia.init(url)
   })
-  socket.on('comment.new', function(data) {
-    graphedia.new_comment(data);
+  socket.on('comment.new', function(data, fn) {
+    graphedia.new_comment(data, fn);
   })
 })
 
@@ -86,8 +86,9 @@ Graphedia.prototype.init = function(url) {
   
   g.socket.join(g.hashed_url);
 }
-Graphedia.prototype.new_comment = function(data) {
+Graphedia.prototype.new_comment = function(data, fn) {
   var g = this;
   
   g.socket.broadcast.to(g.hashed_url).emit('comment.new',{ x: data.x, y: data.y, comment: data.comment});
+  fn({ success: true })
 }
