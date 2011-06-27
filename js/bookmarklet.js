@@ -1,5 +1,7 @@
 var URL = #{url};
 
+var $g = null;
+
 var load_dep = {};
 load_dep.start = function(next) {
   this.next = next;
@@ -28,7 +30,7 @@ load_jq.try_ready = function(time_elapsed) {
   if (typeof jQuery == "undefined") {
     if (time_elapsed <= 5000) setTimeout("load_jq.try_ready(" + (time_elapsed + 200) + ")", 200);
     else alert("Timed out while loading jQuery.")
-  } else { load_dep.loaded(load_jq); }
+  } else { $g = jQuery.noConflict(); load_dep.loaded(load_jq); }
 }
 
 load_socketio = function() {
@@ -81,10 +83,10 @@ Graphedia.prototype.setup_socket = function() {
 Graphedia.prototype.add_markup = function() {
   var g = this;
   
-  var gcont = g.container = $('<div>').attr('id','graphedia_container');
-  $('body').prepend(gcont);
+  var gcont = g.container = $g('<div>').attr('id','graphedia_container');
+  $g('body').prepend(gcont);
   
-  $(window).click(function(e) {
+  $g(window).click(function(e) {
     if(e.shiftKey) g.create_comment(e.pageX, e.pageY);
   })
 }
@@ -92,16 +94,16 @@ Graphedia.prototype.create_comment = function(x,y) {
   var g = this;
   
   // remove old unsubmitted comment forms
-  $('.new-comment').remove();
+  $g('.new-comment').remove();
   
   // add new comment form
-  var new_comment = $('<div>').addClass('new-comment').css({top:y,left:x});
-  var form = $('<form>',{name:'new_comment'});
-  var message = $('<input>',{type:'text',name:'new_comment'});
-  var submit = $('<input>',{type:'submit',name:'submit',value:'Post'});
+  var new_comment = $g('<div>').addClass('new-comment').css({top:y,left:x});
+  var form = $g('<form>',{name:'new_comment'});
+  var message = $g('<input>',{type:'text',name:'new_comment'});
+  var submit = $g('<input>',{type:'submit',name:'submit',value:'Post'});
   g.container.append(new_comment);
   new_comment.append(form);
-  form.append(message,$('<br>'),submit);
+  form.append(message,$g('<br>'),submit);
   message.focus();
   
   form.submit(function() {
@@ -118,7 +120,7 @@ Graphedia.prototype.create_comment = function(x,y) {
 Graphedia.prototype.add_comment = function(x,y,comment) {
   var g = this;
   
-  var comment = $('<div>').addClass('comment').css({
+  var comment = $g('<div>').addClass('comment').css({
     'position': 'absolute',
     'top': y+'px',
     'left': x+'px'
