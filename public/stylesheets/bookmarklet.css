@@ -1,7 +1,8 @@
 #graphedia_container {
-  position:relative;
-  z-index:2147483647;
-  font:14px 'Lucida Grande',Helvetica,Arial,sans-serif;
+  position:relative !important;
+  z-index:2147483647 !important;
+  font:14px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
+  color:#000 !important;
 }
 #graphedia_container input[type='text'],
 #graphedia_container input[type='submit'],
@@ -10,9 +11,8 @@
   font:14px 'Lucida Grande',Helvetica,Arial,sans-serif;
   padding:4px;
 }
-#graphedia_container textarea {
+#graphedia_container input[type='text'] {
   width:250px;
-  height:80px;
 }
 #graphedia_container input[type='submit'],
 #graphedia_container button {
@@ -22,14 +22,15 @@
   position:absolute;
 }
 #graphedia_container .comment {
-  width:400px;
-  height:200px;
-  background-color:blue;
-}
-#graphedia_container .enabled {
-  position:absolute;
-  top:4px;
-  right:4px;
-  background-color:rgba(0,0,0,0.6);
-  color:#fff;
+  max-width:200px;
+  background:rgba(239,239,226,0.9) !important;
+  -webkit-border-radius: 16px !important;
+  -moz-border-radius: 16px !important;
+  border-radius: 16px !important;
+  -moz-box-shadow: 0 0 3px #888 !important;
+  -webkit-box-shadow: 0 0 3px #888 !important;
+  box-shadow: 0 0 3px #888 !important;
+  padding:10px !important;
+  font:14px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
+  color:#000 !important;
 }
