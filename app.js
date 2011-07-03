@@ -63,7 +63,7 @@ app.configure('production', function(){
   //app.use(express.errorHandler());
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   
-  HOST = 'e-lite.org';
+  HOST = 'g.fringelessweb.com';
   PORT = 3000;
   URL = HOST + ':' + PORT;
 });
