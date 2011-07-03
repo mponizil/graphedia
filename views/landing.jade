@@ -4,7 +4,7 @@
     COMMENT THE INTERNET IN REAL TIME, MOTHERFUCKER.
 
   #signup
-    form
+    form#register_form(name='register')
       label Email:
         input(type='text')
       label Username:
@@ -17,23 +17,15 @@
       Or LOGIN if you have an account
 
 script
-  $(document).ready(function() { 
-    $('form').bind('click', function() {
-        $.post("/register", $("form").serialize(), function(data) {
-          var response = $.parseJSON(data)
-          if(response.success){
-            window.location = "/dashboard";
-          } else {
-            alert(response.error)
-          }
-        })
-      });
-      
-    $('#login').bind('click', function(){
-        alert('Login flow up top!');
-      })  
-    });
-script
-    //post to /login with username and password
-    //post to /register with email, username, and password
+  $(function() { 
+    $('#register_form').submit(function() {
+    $.post("/register", $("#register_form").serialize(), function(data) {
+      var response = $.parseJSON(data)
+      if(response.success) window.location = "/dashboard";
+      else alert(response.error)
+    })
     
+    $('#login').click(function(){
+      alert('Login flow up top!');
+    })  
+  });
