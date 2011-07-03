@@ -88,8 +88,8 @@ app.post('/login', function(req, res) {
   User.find({ username: username, password: password }, function(err, docs) {
     if(docs) {
       // user exists, log them in
-      res.cookie('username', 'username', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
-      res.cookie('password', 'password', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
+      res.cookie('username', docs[0].username, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
+      res.cookie('password', docs[0].password, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
       
       res.write("{ success: true }")
     } else {
@@ -106,13 +106,13 @@ app.post('/register', function(req, res) {
   var password = Hash.md5(req.params.password);
   
   var user = new User;
-  user.email = email
+  user.email = email;
   user.username = username;
   user.password = password;
   user.save(function(err) {
     if(!err) {
-      res.cookie('username', 'username', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
-      res.cookie('password', 'password', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
+      res.cookie('username', username, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
+      res.cookie('password', password, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
 
       res.write("{ success: true }")
     } else { res.write("{ success: false, error: " + err + " }")}
