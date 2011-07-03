@@ -63,10 +63,10 @@ app.configure('production', function(){
 
 // routes
 app.get('/', function(req, res) {
-  res.render('webpage');
+  res.render('landing');
 })
-app.get('/webpage', function(req, res) {
-  res.render('webpage');
+app.get('/landing', function(req, res) {
+  res.render('landing');
 });
 app.get('/bookmarklet', function(req, res) {
   res.render('bookmarklet', { url: URL });
