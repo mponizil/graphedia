@@ -1,6 +1,7 @@
 var express = require('express'),
     fs = require('fs'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    json = JSON.stringify;
 require('joose');
 require('joosex-namespace-depended');
 require('hash');
@@ -91,11 +92,11 @@ app.post('/login', function(req, res) {
       res.cookie('username', docs[0].username, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
       res.cookie('password', docs[0].password, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
       
-      res.write("{ success: true }");
+      res.write(json({ success: true }));
       res.end();
     } else {
       // user doesn't exist
-      res.write("{ success: false, error: 'No user found with the given username and password.' }");
+      res.write(json({ success: false, error: 'No user found with the given username and password.' }));
       res.end();
     }
   })
@@ -114,10 +115,10 @@ app.post('/register', function(req, res) {
       res.cookie('username', username, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
       res.cookie('password', password, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
 
-      res.write("{ success: true }");
+      res.write(json({ success: true }));
       res.end();
     } else {
-      res.write("{ success: false, error: " + err + " }");
+      res.write(json({ success: false, error: " + err + " }));
       res.end();
     }
   })
