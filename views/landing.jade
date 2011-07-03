@@ -1,0 +1,39 @@
+#main
+  h1 Graffidia
+  #copy
+    COMMENT THE INTERNET IN REAL TIME, MOTHERFUCKER.
+
+  #signup
+    form
+      label Email:
+        input(type='text')
+      label Username:
+        input(type='text')
+      label Password:
+        input(type='text')
+      input(type='submit')
+      
+    #login
+      Or LOGIN if you have an account
+
+script
+  $(document).ready(function() { 
+    $('form').bind('click', function() {
+        $.post("/register", $("form").serialize(), function(data) {
+          var response = $.parseJSON(data)
+          if(response.success){
+            window.location = "/dashboard";
+          } else {
+            alert(response.error)
+          }
+        })
+      });
+      
+    $('#login').bind('click', function(){
+        alert('Login flow up top!');
+      })  
+    });
+script
+    //post to /login with username and password
+    //post to /register with email, username, and password
+    
