@@ -15,8 +15,8 @@ var Schema = mongoose.Schema,
 var Comment = new Schema({
   author: ObjectId,
   body: String,
-  date: Date,
-  ups: Number,
+  date: { type: Date, default: Date.now },
+  ups: { type: Number, default: 0 },
   page_url: String,
   page_hash: String,
   page_x: Number,
@@ -104,21 +104,31 @@ io.sockets.on('connection', function(socket) {
 })
 
 function Graphedia(socket) {
-  this.url = null;
-  this.hashed_url = null;
+  this.page_url = null;
+  this.page_hash = null;
   this.socket = socket;
 }
 Graphedia.prototype.init = function(url) {
   var g = this;
   
-  g.url = url;
-  g.hashed_url = Hash.md5(url);
+  g.page_url = url;
+  g.page_hash = Hash.md5(url);
   
-  g.socket.join(g.hashed_url);
+  g.socket.join(g.page_hash);
 }
 Graphedia.prototype.new_comment = function(data, fn) {
   var g = this;
   
-  g.socket.broadcast.to(g.hashed_url).emit('comments.new',{ x: data.x, y: data.y, comment: data.comment});
-  fn({ success: true })
+  // save to mongo
+  var comment = new Comment;
+  comment.body = data.comment;
+  comment.page_url = g.page_url;
+  comment.page_hash = g.page_hash;
+  comment.page_x = data.x;
+  comment.page_y = data.y;
+  comment.save(function(err) {
+    // broadcast to all users
+    g.socket.broadcast.to(g.page_hash).emit('comments.new',{ x: data.x, y: data.y, comment: data.comment});
+    fn({ success: true })
+  })
 }
