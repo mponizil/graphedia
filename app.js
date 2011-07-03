@@ -32,12 +32,6 @@ var User = new Schema({
 var Comment = mongoose.model('Comment', Comment);
 var User = mongoose.model('User', User);
 
-var user = new User;
-user.username = "mponizil";
-user.save(function(err) {
-  console.log('saved')
-})
-
 // configuration
 app.configure(function(){
   app.set('views', __dirname + '/views');
