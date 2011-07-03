@@ -39,15 +39,16 @@ app.configure('production', function(){
 });
 
 // routes
-app.get('/', Routes.dashboard)
-app.get('/dashboard', Routes.dashboard)
-app.post('/login', Routes.login)
-app.get('/logout', Routes.logout);
-app.post('/register', Routes.register)
+var routes = new Routes(HOST, PORT, URL);
+app.get('/', routes.dashboard)
+app.get('/dashboard', routes.dashboard)
+app.post('/login', routes.login)
+app.get('/logout', routes.logout);
+app.post('/register', routes.register)
 app.get('/bookmarklet', function(req, res) {
   res.render('bookmarklet', { url: URL });
 });
-app.get('/js/bookmarklet.js', Routes.bmjs)
+app.get('/js/bookmarklet.js', routes.bmjs)
 
 app.listen(PORT);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
