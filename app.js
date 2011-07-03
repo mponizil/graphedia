@@ -80,7 +80,7 @@ app.get('/', function(req, res) {
         res.render('landing');
       }
     })
-  }
+  } else { res.render('landing'); }
 })
 app.post('/login', function(req, res) {
   var username = req.body.username;
