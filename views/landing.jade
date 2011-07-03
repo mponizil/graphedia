@@ -6,11 +6,11 @@
   #signup
     form#register_form(name='register')
       label Email:
-        input(type='text')
+        input(type='text',name='email')
       label Username:
-        input(type='text')
+        input(type='text',name='username')
       label Password:
-        input(type='text')
+        input(type='password',name='password')
       input(type='submit')
       
     #login
@@ -19,10 +19,12 @@
 script
   $(function() { 
     $('#register_form').submit(function() {
-    $.post("/register", $("#register_form").serialize(), function(data) {
-      var response = $.parseJSON(data)
-      if(response.success) window.location = "/dashboard";
-      else alert(response.error)
+      $.post("/register", $("#register_form").serialize(), function(data) {
+        var response = $.parseJSON(data)
+        if(response.success) window.location = "/dashboard";
+        else alert(response.error)
+      })
+      return false;
     })
     
     $('#login').click(function(){

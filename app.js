@@ -82,8 +82,8 @@ app.get('/', function(req, res) {
   }
 })
 app.post('/login', function(req, res) {
-  var username = req.params.username;
-  var password = Hash.md5(req.params.password);
+  var username = req.body.username;
+  var password = Hash.md5(req.body.password);
   
   User.find({ username: username, password: password }, function(err, docs) {
     if(docs) {
@@ -91,19 +91,19 @@ app.post('/login', function(req, res) {
       res.cookie('username', docs[0].username, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
       res.cookie('password', docs[0].password, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
       
-      res.write("{ success: true }")
+      res.write("{ success: true }");
+      res.end();
     } else {
       // user doesn't exist
-      res.write("{ success: false, error: 'No user found with the given username and password.' }")
+      res.write("{ success: false, error: 'No user found with the given username and password.' }");
+      res.end();
     }
   })
-  
-  res.end();
 })
 app.post('/register', function(req, res) {
-  var email = req.params.email;
-  var username = req.params.username;
-  var password = Hash.md5(req.params.password);
+  var email = req.body.email;
+  var username = req.body.username;
+  var password = Hash.md5(req.body.password);
   
   var user = new User;
   user.email = email;
@@ -114,11 +114,13 @@ app.post('/register', function(req, res) {
       res.cookie('username', username, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
       res.cookie('password', password, { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
 
-      res.write("{ success: true }")
-    } else { res.write("{ success: false, error: " + err + " }")}
+      res.write("{ success: true }");
+      res.end();
+    } else {
+      res.write("{ success: false, error: " + err + " }");
+      res.end();
+    }
   })
-  
-  res.end();
 })
 app.get('/bookmarklet', function(req, res) {
   res.render('bookmarklet', { url: URL });
