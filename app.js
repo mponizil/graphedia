@@ -37,6 +37,7 @@ app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.bodyParser());
+  app.use(express.cookieParser());
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
@@ -63,10 +64,64 @@ app.configure('production', function(){
 
 // routes
 app.get('/', function(req, res) {
-  res.render('webpage');
+  // check cookies
+  var username = req.cookies.username;
+  var password = req.cookies.password;
+  
+  if(username && password) {
+    // check if it exists in mongo
+    User.find({ username: username, password: password }, function(err, docs) {
+      if(docs) {
+        // user is logged in
+        res.render('dashboard', { email: docs[0].email, username: docs[0].username });
+      } else {
+        // user is not logged in
+        res.render('landing');
+      }
+    })
+  }
 })
-app.get('/webpage', function(req, res) {
-  res.render('webpage');
+app.post('/login', function(req, res) {
+  var username = req.params.username;
+  var password = Hash.md5(req.params.password);
+  
+  User.find({ username: username, password: password }, function(err, docs) {
+    if(docs) {
+      // user exists, log them in
+      res.cookie('username', 'username', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
+      res.cookie('password', 'password', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
+
+      res.write("{ success: true, username: " + username + " }")
+    } else {
+      // user doesn't exist
+      res.write("{ success: false, error: 'No user found with the given username and password.' }")
+    }
+  })
+  
+  res.end();
+})
+app.post('/register', function(req, res) {
+  var email = req.params.email;
+  var username = req.params.username;
+  var password = Hash.md5(req.params.password);
+  
+  var user = new User;
+  user.email = email
+  user.username = username;
+  user.password = password;
+  user.save(function(err) {
+    if(!err) {
+      res.cookie('username', 'username', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
+      res.cookie('password', 'password', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
+
+      res.write("{ success: true, username: " + username + " }")
+    } else { res.write("{ success: false, error: " + err + " }")}
+  })
+  
+  res.end();
+})
+app.get('/landing', function(req, res) {
+  res.render('landing');
 });
 app.get('/bookmarklet', function(req, res) {
   res.render('bookmarklet', { url: URL });
@@ -83,6 +138,7 @@ app.get('/js/bookmarklet.js', function(req, res) {
 app.listen(PORT);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 
+// socket.io begins
 var io = require('socket.io').listen(app);
 io.set('log level',2)
 
@@ -97,6 +153,7 @@ io.sockets.on('connection', function(socket) {
   })
 })
 
+// graffidia object
 function Graphedia(socket) {
   this.page_url = null;
   this.page_hash = null;
