@@ -90,8 +90,8 @@ app.post('/login', function(req, res) {
       // user exists, log them in
       res.cookie('username', 'username', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
       res.cookie('password', 'password', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
-
-      res.write("{ success: true, username: " + username + " }")
+      
+      res.write("{ success: true }")
     } else {
       // user doesn't exist
       res.write("{ success: false, error: 'No user found with the given username and password.' }")
@@ -114,15 +114,12 @@ app.post('/register', function(req, res) {
       res.cookie('username', 'username', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
       res.cookie('password', 'password', { expires: new Date(Date.now() + 1000*60*60*24*30), httpOnly: true });
 
-      res.write("{ success: true, username: " + username + " }")
+      res.write("{ success: true }")
     } else { res.write("{ success: false, error: " + err + " }")}
   })
   
   res.end();
 })
-app.get('/landing', function(req, res) {
-  res.render('landing');
-});
 app.get('/bookmarklet', function(req, res) {
   res.render('bookmarklet', { url: URL });
 });
