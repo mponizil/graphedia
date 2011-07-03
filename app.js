@@ -1,5 +1,4 @@
-var express = require('express'),
-    fs = require('fs');
+var express = require('express');
 require('joose');
 require('joosex-namespace-depended');
 require('hash');
