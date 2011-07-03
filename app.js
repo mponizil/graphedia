@@ -36,7 +36,6 @@ var user = new User;
 user.username = "mponizil";
 user.save(function(err) {
   console.log('saved')
-  console.log(err)
 })
 
 // configuration
@@ -99,7 +98,7 @@ io.sockets.on('connection', function(socket) {
   socket.on('init', function(url) {
     graphedia.init(url)
   })
-  socket.on('comment.new', function(data, fn) {
+  socket.on('comments.new', function(data, fn) {
     graphedia.new_comment(data, fn);
   })
 })
@@ -120,6 +119,6 @@ Graphedia.prototype.init = function(url) {
 Graphedia.prototype.new_comment = function(data, fn) {
   var g = this;
   
-  g.socket.broadcast.to(g.hashed_url).emit('comment.new',{ x: data.x, y: data.y, comment: data.comment});
+  g.socket.broadcast.to(g.hashed_url).emit('comments.new',{ x: data.x, y: data.y, comment: data.comment});
   fn({ success: true })
 }

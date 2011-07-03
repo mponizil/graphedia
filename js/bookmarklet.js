@@ -76,7 +76,7 @@ Graphedia.prototype.setup_socket = function() {
   g.socket = io.connect('http://' + URL, 3000);
   g.socket.emit('init', document.URL);
   
-  g.socket.on('comment.new',function(data) {
+  g.socket.on('comments.new',function(data) {
     g.add_comment(data.x,data.y,data.comment);
   })
 }
@@ -108,7 +108,7 @@ Graphedia.prototype.create_comment = function(x,y) {
   
   form.submit(function() {
     var comment = message.val();
-    g.socket.emit('comment.new', { x: x, y: y, comment: comment }, function(data) {
+    g.socket.emit('comments.new', { x: x, y: y, comment: comment }, function(data) {
       if(data.success) {
         new_comment.remove();
         g.add_comment(x,y,comment)
