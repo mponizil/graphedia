@@ -95,8 +95,8 @@ io.set('log level',2)
 io.sockets.on('connection', function(socket) {
   var graphedia = new Graphedia(socket);
   
-  socket.on('init', function(url) {
-    graphedia.init(url)
+  socket.on('init', function(url, fn) {
+    graphedia.init(url, fn)
   })
   socket.on('comments.new', function(data, fn) {
     graphedia.new_comment(data, fn);
@@ -108,13 +108,18 @@ function Graphedia(socket) {
   this.page_hash = null;
   this.socket = socket;
 }
-Graphedia.prototype.init = function(url) {
+Graphedia.prototype.init = function(url, fn) {
   var g = this;
   
   g.page_url = url;
   g.page_hash = Hash.md5(url);
   
   g.socket.join(g.page_hash);
+  
+  // get all comments from mongo
+  Comment.find({ page_hash: g.page_hash }, function(err, docs) {
+    fn(docs);
+  })
 }
 Graphedia.prototype.new_comment = function(data, fn) {
   var g = this;

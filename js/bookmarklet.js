@@ -74,7 +74,9 @@ Graphedia.prototype.setup_socket = function() {
   var g = this;
   
   g.socket = io.connect('http://' + URL, 3000);
-  g.socket.emit('init', document.URL);
+  g.socket.emit('init', document.URL, function(data) {
+    for(i in data) g.add_comment(data[i].page_x, data[i].page_y, data[i].body); 
+  });
   
   g.socket.on('comments.new',function(data) {
     g.add_comment(data.x,data.y,data.comment);
