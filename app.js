@@ -1,10 +1,43 @@
 var express = require('express'),
-    fs = require('fs');
+    fs = require('fs'),
+    mongoose = require('mongoose');
 require('joose');
 require('joosex-namespace-depended');
 require('hash');
 
 var app = module.exports = express.createServer();
+
+mongoose.connect('mongodb://localhost/graffidia');
+
+var Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId;
+
+var Comment = new Schema({
+  author: ObjectId,
+  body: String,
+  date: Date,
+  ups: Number,
+  page_url: String,
+  page_hash: String,
+  page_x: Number,
+  page_y: Number
+})
+var User = new Schema({
+  username: String,
+  password: String,
+  email: String,
+  ups: Number
+})
+
+var Comment = mongoose.model('Comment', Comment);
+var User = mongoose.model('User', User);
+
+var user = new User;
+user.username = "mponizil";
+user.save(function(err) {
+  console.log('saved')
+  console.log(err)
+})
 
 // configuration
 app.configure(function(){
@@ -59,8 +92,6 @@ console.log("Express server listening on port %d in %s mode", app.address().port
 
 var io = require('socket.io').listen(app);
 io.set('log level',2)
-
-var pages = [];
 
 io.sockets.on('connection', function(socket) {
   var graphedia = new Graphedia(socket);
