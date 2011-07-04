@@ -1,16 +1,23 @@
 #main
-  h1 Graffidia
+  img(src='/stylesheets/logo.png', id='logo')
+
   #copy
-    COMMENT THE INTERNET IN REAL TIME, MOTHERFUCKER.
+    \COMMENT THE INTERNET IN REAL TIME, MOTHERFUCKER.
 
   #signup
     form#register_form(name='register')
-      label Email:
+    .cont Email:
+      label.field
         input(type='text',name='email')
-      label Username:
+        <br><br>
+    .cont Username:
+      label.field
         input(type='text',name='username')
-      label Password:
+        <br><br>
+    .cont Password:
+      label.field
         input(type='password',name='password')
+        <br><br>
       input(type='submit')
       
     #login

@@ -1,3 +1,49 @@
 h1{
   font-size: 20px;
+  font-family: helvetica;
+}
+
+html {
+  background: url(wall.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #FFF;
+  width: 100%;
+}
+
+#logo{
+  position: relative;
+  display: block;
+  top: 100px;
+  left: 50px;
+  -webkit-transform:rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  transform: rotate(-20deg); 
+}
+
+#signup{
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  color: #FFF;
+  left: 300px;
+}
+
+#main{
+  width: 100%;
+}
+
+.field{
+   height: 25px; width: 300px;
+   font-size: 15px;
+}
+
+#copy{
+  position: absolute;
+  top: 400px;
+  left: 500px;
+  font-size: 50px;
 }
