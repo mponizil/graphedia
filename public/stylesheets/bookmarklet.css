@@ -8,21 +8,30 @@
 #graphedia_container input[type='submit'],
 #graphedia_container textarea,
 #graphedia_container button {
-  font:14px 'Lucida Grande',Helvetica,Arial,sans-serif;
-  padding:4px;
+  font:14px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
+  padding:4px !important;
 }
 #graphedia_container input[type='text'] {
-  width:250px;
+  width:250px !important;
 }
 #graphedia_container input[type='submit'],
 #graphedia_container button {
-  font-size:18px;
+  font-size:18px !important;
+}
+#graphedia_container .mini-dash {
+  width:100%;
+  padding:8px;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  position:fixed;
+  top:0;
+  left:0;
 }
 #graphedia_container .new-comment {
-  position:absolute;
+  position:absolute !important;
 }
 #graphedia_container .comment {
-  max-width:200px;
+  max-width:200px !important;
   background:rgba(239,239,226,0.9) !important;
   -webkit-border-radius: 16px !important;
   -moz-border-radius: 16px !important;

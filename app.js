@@ -1,8 +1,13 @@
+// constants
+var HOST, PORT, URL;
+
+// express
 var express = require('express');
 require('joose');
 require('joosex-namespace-depended');
 require('hash');
 
+// internal modules
 var Graphedia = require('./lib/Graphedia');
 var Routes = require('./lib/Routes');
 
@@ -18,8 +23,6 @@ app.configure(function(){
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
-
-var HOST, PORT, URL;
 
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -45,6 +48,7 @@ app.get('/dashboard', routes.dashboard)
 app.post('/login', routes.login)
 app.get('/logout', routes.logout);
 app.post('/register', routes.register)
+app.get('/mini_dash', routes.mini_dash);
 app.get('/bookmarklet', function(req, res) {
   res.render('bookmarklet', { url: URL });
 });
