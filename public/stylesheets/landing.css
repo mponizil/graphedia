@@ -11,7 +11,7 @@ html {
   background-size: cover;
   color: #FFF;
   width: 100%;
-  font-family: arial;
+  font: 14px Arial, Helvetica, sans-serif;
 }
 
 #logo{
@@ -137,6 +137,7 @@ tr{
   border: solid #000000 1px;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#454545), to(#696c70));
   background: -moz-linear-gradient(top, #454545, #696c70);
+  cursor: pointer;
 }
 #login:hover {
   background: #404040;
@@ -160,6 +161,7 @@ tr{
   border: solid #000000 1px;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#225238), to(#31754c));
   background: -moz-linear-gradient(top, #225238, #31754c);
+  cursor: pointer;
 }
 .submit:hover {
   background: #1c4f38;
