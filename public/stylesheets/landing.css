@@ -36,9 +36,17 @@ html {
   width: 100%;
 }
 
-.field{
-   height: 25px; width: 300px;
-   font-size: 15px;
+.user_input{
+  height: 25px;
+  font-size: 15px;
+  border: 3px #b0bac9 solid;
+  border-radius: 5px;
+  color: #7385a0;
+  padding-left: 5px;
+}
+
+tr{
+  height: 40px;
 }
 
 #copy{
@@ -46,4 +54,16 @@ html {
   top: 400px;
   left: 500px;
   font-size: 50px;
+}
+
+.type{
+  text-align: right;
+}
+
+#register_form{
+ width: 300px; 
+}
+
+input{
+  width: 100%;
 }
