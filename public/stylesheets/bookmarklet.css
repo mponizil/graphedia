@@ -26,6 +26,7 @@
   position:fixed;
   top:0;
   left:0;
+  display:none;
 }
 #graphedia_container .new-comment {
   position:absolute !important;
