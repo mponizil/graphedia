@@ -1,8 +1,7 @@
 #main
   img(src='/images/logo.png', id='logo')
-
-  #copy COMMENT THE INTERNET IN REAL TIME, MOTHERFUCKER.
-
+  img(src='images/tagline.png', id='tagline')  
+  
   #signup  
     form#register_form(name='register')
       table
@@ -20,9 +19,11 @@
             input.user_input(type='password',name='password')
         tr
           td
-            input(type='submit')
+          td
+            input.submit(type='submit')
       
-    #login Or LOGIN if you have an account
+    button#login Login, bitch!
+
 
 script
   $(function() { 
@@ -37,5 +38,12 @@ script
     
     $('#login').click(function(){
       alert('Login flow up top!');
-    })  
+    })
+    
+    $('#login_form').submit(function() {
+          $.post("/login", $("#login_form").serialize(), function(data) {
+            console.log(data)
+          })
+          return false;
+        })  
   });
