@@ -36,8 +36,8 @@ app.configure('production', function(){
   //app.use(express.errorHandler());
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   
-  HOST = 'g.fringelessweb.com';
-  PORT = 3000;
+  HOST = 'graffidia.com';
+  PORT = 80;
   URL = HOST + ':' + PORT;
 });
 
