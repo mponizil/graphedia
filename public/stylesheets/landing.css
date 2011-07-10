@@ -16,24 +16,34 @@ html {
 #logo{
   position: relative;
   display: block;
-  top: 100px;
-  left: 50px;
-  -webkit-transform:rotate(-20deg);
-  -moz-transform: rotate(-20deg);
-  -o-transform: rotate(-20deg);
-  transform: rotate(-20deg); 
+  top: 80px;
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+
+#tagline{
+  position: relative;
+  top: 310px;
+  -webkit-transform: rotate(11deg);
+  -moz-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
 }
 
 #signup{
-  position: relative;
+  position: absolute;
   margin: 0 auto;
-  width: 500px;
-  color: #FFF;
-  left: 300px;
+  color: white;
+  left: 450px;
+  top: 220px;
 }
 
 #main{
-  width: 100%;
+  width: 900px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .user_input{
@@ -43,17 +53,19 @@ html {
   border-radius: 5px;
   color: #7385a0;
   padding-left: 5px;
+  width: 100%;
+}
+
+table{
+  width: 100%;
 }
 
 tr{
   height: 40px;
 }
 
-#copy{
-  position: absolute;
-  top: 400px;
-  left: 500px;
-  font-size: 50px;
+.submit{
+  float: right;
 }
 
 .type{
@@ -61,9 +73,10 @@ tr{
 }
 
 #register_form{
- width: 300px; 
+ width: 400px; 
 }
 
 input{
   width: 100%;
 }
+
