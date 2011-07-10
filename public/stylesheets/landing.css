@@ -4,7 +4,7 @@ h1{
 }
 
 html {
-  background: url(../images/wall.jpg) no-repeat center center fixed;
+/*  background: url(../images/wall.jpg) no-repeat center center fixed;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -76,7 +76,40 @@ tr{
  width: 400px; 
 }
 
-input{
+.user_input{
   width: 100%;
+}
+
+.mini-dash {
+  width:100%;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  position:fixed;
+  top:0;
+  left:0;
+  display:none;
+  opacity: .6;
+  height: 0px;
+  line-height: 25px;
+  text-align: right;
+  font-size: 11px;
+  z-index: 2147483647;
+}
+
+.login_input{
+  height: 15px;
+  border-radius: 5px;
+  border: 0px;
+  padding-left: 3px;
+}
+
+.mini_submit{
+  display:none;
+}
+
+#login_form{
+  width: 500px;
+  float: right;
+  padding-right: 5px;
 }
 

@@ -1,3 +1,11 @@
+.mini-dash
+  form#login_form
+    | Username:
+    input.login_input(type='text',name='username')
+    |&nbsp;&nbsp;&nbsp;&nbsp;Password:
+    input.login_input(type='password',name='password')
+    input.mini_submit(type='submit')
+
 #main
   img(src='/images/logo.png', id='logo')
   img(src='images/tagline.png', id='tagline')  
@@ -36,9 +44,20 @@ script
       return false;
     })
     
-    $('#login').click(function(){
-      alert('Login flow up top!');
-    })
+    $("#login").click(function(){
+      $(".mini-dash").animate({
+        width: "100%",
+        height: "25px"
+      }, 500 );
+       $(".login_input:first").focus();
+    });
+    
+    $('input').keydown(function(e){
+            if (e.keyCode == 13) {
+                $(this).parents('form').submit();
+                return false;
+            }
+        });
     
     $('#login_form').submit(function() {
           $.post("/login", $("#login_form").serialize(), function(data) {
