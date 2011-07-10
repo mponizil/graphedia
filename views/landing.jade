@@ -4,21 +4,24 @@
   #copy
     \COMMENT THE INTERNET IN REAL TIME, MOTHERFUCKER.
 
-  #signup
-    form#register_form(name='register')
-    .cont Email:
-      label.field
-        input(type='text',name='email')
-        <br><br>
-    .cont Username:
-      label.field
-        input(type='text',name='username')
-        <br><br>
-    .cont Password:
-      label.field
-        input(type='password',name='password')
-        <br><br>
-      input(type='submit')
+  #signup  
+    form(name='register')
+    table#register_form
+      tr
+        td.type Email:
+        td
+          input.user_input(type='text',name='email')
+      tr 
+        td.type Username:
+        td
+          input.user_input(type='text',name='username')
+      tr
+        td.type Password:
+        td
+          input.user_input(type='password',name='password')
+      tr
+        td
+          input(type='submit')
       
     #login
       Or LOGIN if you have an account
