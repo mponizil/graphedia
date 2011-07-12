@@ -11,6 +11,7 @@
 #graphedia_container button {
   font:14px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
   padding:4px !important;
+  outline:none;
 }
 #graphedia_container input[type='text'],
 #graphedia_container input[type='password'] {
@@ -23,6 +24,9 @@
 #graphedia_container .italic {
   font-style:italic;
   color:#ccc;
+}
+#graphedia_container .form-error {
+  border:2px solid #9d1616 !important;
 }
 #graphedia_container .mini-dash {
   width:100%;
