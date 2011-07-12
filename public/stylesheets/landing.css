@@ -179,3 +179,10 @@ tr{
   bottom: 30px;
   height: 51px;
 }
+
+#copy{
+  font-family: 'Bowlby One SC', serif;
+  font-size: 40px;
+  float: right;
+  padding-right: 20px;
+}
