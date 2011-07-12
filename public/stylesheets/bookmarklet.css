@@ -5,28 +5,64 @@
   color:#000 !important;
 }
 #graphedia_container input[type='text'],
+#graphedia_container input[type='password'],
 #graphedia_container input[type='submit'],
 #graphedia_container textarea,
 #graphedia_container button {
   font:14px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
   padding:4px !important;
 }
-#graphedia_container input[type='text'] {
+#graphedia_container input[type='text'],
+#graphedia_container input[type='password'] {
   width:250px !important;
 }
 #graphedia_container input[type='submit'],
 #graphedia_container button {
   font-size:18px !important;
 }
+#graphedia_container .italic {
+  font-style:italic;
+  color:#ccc;
+}
 #graphedia_container .mini-dash {
   width:100%;
-  padding:8px;
+  padding:8px 0;
   background:rgba(0,0,0,0.6);
   color:#fff;
   position:fixed;
   top:0;
   left:0;
   display:none;
+  font-size:13px;
+}
+#graphedia_container .register {
+  float:left;
+  margin-left:20px;
+}
+#graphedia_container .login {
+  float:right;
+}
+#graphedia_container .login .username {
+  float:left;
+  margin-right:6px;
+  width:120px !important;
+  height: 17px;
+  border-radius: 13px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  padding: 4px 8px !important;
+}
+#graphedia_container .login .password {
+  float:left;
+  margin-right:14px;
+  width:120px !important;
+  height: 17px;
+  border-radius: 13px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  padding: 4px 8px !important;
 }
 #graphedia_container .new-comment {
   position:absolute !important;
