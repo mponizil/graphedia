@@ -45,6 +45,7 @@ html {
 }
 
 .user_input{
+  outline: none;
   height: 25px;
   font-size: 15px;
   border: 3px #b0bac9 solid;
@@ -92,6 +93,7 @@ tr{
 }
 
 .login_input{
+  outline: none;
   height: 17px;
   border-radius: 13px;
   border: 0px;
@@ -114,29 +116,16 @@ tr{
 }
 
 #login {
-  display: inline;
-  position: relative;
-  left: 73%;
-  top: 120%;
-  font-family: Arial;
-  color: black;
-  font-size: 18px;
-  padding-top: 7px;
-  padding-right: 35px;
-  padding-bottom: 7px;
-  padding-left: 35px;
-  text-decoration: none;
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
-  -webkit-box-shadow: 0px 1px 3px #666;
-  -moz-box-shadow: 0px 1px 3px #666;
-  text-shadow: 1px 1px 3px #666;
-  border: solid black 1px;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#454545), to(#696C70));
-  background: -moz-linear-gradient(top, #454545, #696C70);
-  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #5299C4;
+}#login:active, :visited{
+  text-decoration: underline;
+  color: #5299C4;
 }#login:hover {
-  background: #404040;
+  color: #2F6270;
+  cursor: pointer;
 }
 
 
