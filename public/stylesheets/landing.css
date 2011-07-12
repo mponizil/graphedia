@@ -4,11 +4,11 @@ h1{
 }
 
 html {
-/*  background: url(../images/wall.jpg) no-repeat center center fixed;*/
+/*  background: url(../images/wall.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover;*/
   color: #FFF;
   width: 100%;
   font: 14px Arial, Helvetica, sans-serif;
@@ -17,16 +17,13 @@ html {
 #logo{
   position: relative;
   display: block;
-  top: 80px;
-  -webkit-transform: rotate(-15deg);
-  -moz-transform: rotate(-15deg);
-  -o-transform: rotate(-15deg);
-  transform: rotate(-15deg);
+  bottom: 30px;
 }
 
 #tagline{
   position: relative;
-  top: 310px;
+  bottom: 80px;
+  left:70px;
   -webkit-transform: rotate(11deg);
   -moz-transform: rotate(-15deg);
   -o-transform: rotate(-15deg);
@@ -36,13 +33,13 @@ html {
 #signup{
   position: absolute;
   margin: 0 auto;
-  color: white;
-  left: 450px;
+  color: black;
+  left: 500px;
   top: 220px;
 }
 
 #main{
-  width: 900px;
+  width: 1000px;
   margin: 0 auto;
   position: relative;
 }
@@ -75,6 +72,7 @@ tr{
 
 .user_input{
   width: 100%;
+  padding: 4px 8px
 }
 
 .mini-dash {
@@ -121,7 +119,7 @@ tr{
   left: 73%;
   top: 120%;
   font-family: Arial;
-  color: white;
+  color: black;
   font-size: 18px;
   padding-top: 7px;
   padding-right: 35px;
@@ -147,7 +145,7 @@ tr{
   position:relative;
   left: 40%;
   font-family: Arial;
-  color: white;
+  color: black;
   font-size: 18px;
   padding-top: 7px;
   padding-right: 22px;
