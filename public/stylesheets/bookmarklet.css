@@ -33,6 +33,7 @@
   top:0;
   left:0;
   display:none;
+  font-size:13px;
 }
 #graphedia_container .register {
   float:left;
@@ -44,12 +45,24 @@
 #graphedia_container .login .username {
   float:left;
   margin-right:6px;
-  width:150px !important;
+  width:120px !important;
+  height: 17px;
+  border-radius: 13px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  padding: 4px 8px !important;
 }
 #graphedia_container .login .password {
   float:left;
-  margin-right:20px;
-  width:150px !important;
+  margin-right:14px;
+  width:120px !important;
+  height: 17px;
+  border-radius: 13px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  padding: 4px 8px !important;
 }
 #graphedia_container .new-comment {
   position:absolute !important;

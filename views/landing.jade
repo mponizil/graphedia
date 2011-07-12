@@ -43,26 +43,26 @@ script
       })
       return false;
     })
-    
+
     $("#login").click(function(){
       $(".mini-dash").animate({
         width: "100%",
         height: "35px"
       }, 500 );
-       $(".login_input:first").focus();
+      $(".login_input:first").focus();
     });
-    
+
     $('input').keydown(function(e){
-            if (e.keyCode == 13) {
-                $(this).parents('form').submit();
-                return false;
-            }
-        });
-    
+      if (e.keyCode == 13) {
+        $(this).parents('form').submit();
+        return false;
+      }
+    });
+
     $('#login_form').submit(function() {
-          $.post("/login", $("#login_form").serialize(), function(data) {
-            console.log(data)
-          })
-          return false;
-        })  
+      $.post("/login", $("#login_form").serialize(), function(data) {
+        console.log(data)
+      })
+      return false;
+    })
   });
