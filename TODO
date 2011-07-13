@@ -43,7 +43,10 @@ by implementing popup login, this issue becomes moot
 
 THE PLAN:
 
-we have to go with the popup for remote authentication
+initializing the bookmarklet creates an iframe (graffidia.com/remote_login)
 
-after the popup verifies the user and closes, we make a socket.io init call
+authentication is done here
+
+after the iframe verifies the user, it is either removed from the page or hidden
+then we make a socket.io init call
 the backend answers by looking up the user by cookie username/password and then saves the incoming socket.id to that user
