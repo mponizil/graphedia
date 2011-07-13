@@ -40,3 +40,10 @@ OTHER PROBLEM:
 currently, logging in from the mini dash makes an unsecure GET request to graffidia.com/login
 
 by implementing popup login, this issue becomes moot
+
+THE PLAN:
+
+we have to go with the popup for remote authentication
+
+after the popup verifies the user and closes, we make a socket.io init call
+the backend answers by looking up the user by cookie username/password and then saves the incoming socket.id to that user
