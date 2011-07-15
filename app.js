@@ -46,7 +46,6 @@ var routes = new Routes(HOST, PORT, URL);
 app.get('/', routes.dashboard);
 app.get('/dashboard', routes.dashboard);
 app.post('/login', routes.login);
-app.get('/login', routes.login);
 app.get('/logout', routes.logout);
 app.post('/register', routes.register);
 app.get('/mini_dash', routes.mini_dash);
