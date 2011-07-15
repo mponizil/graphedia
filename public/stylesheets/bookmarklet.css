@@ -28,7 +28,7 @@
 #graphedia_container .form-error {
   border:2px solid #9d1616 !important;
 }
-#graphedia_container .mini-dash {
+#graphedia_container #mini-dash {
   width:100%;
   padding:8px 0;
   background:rgba(0,0,0,0.6);
@@ -39,34 +39,8 @@
   display:none;
   font-size:13px;
 }
-#graphedia_container .register {
-  float:left;
-  margin-left:20px;
-}
-#graphedia_container .login {
-  float:right;
-}
-#graphedia_container .login .username {
-  float:left;
-  margin-right:6px;
-  width:120px !important;
-  height: 17px;
-  border-radius: 13px;
-  -moz-border-radius: 13px;
-  -webkit-border-radius: 13px;
-  border: 0px;
-  padding: 4px 8px !important;
-}
-#graphedia_container .login .password {
-  float:left;
-  margin-right:14px;
-  width:120px !important;
-  height: 17px;
-  border-radius: 13px;
-  -moz-border-radius: 13px;
-  -webkit-border-radius: 13px;
-  border: 0px;
-  padding: 4px 8px !important;
+#graphedia_container iframe {
+  border:none !important;
 }
 #graphedia_container .new-comment {
   position:absolute !important;

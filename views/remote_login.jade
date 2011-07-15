@@ -1,0 +1,38 @@
+!!!
+html
+  head
+    title Graffidia Bookmarklet | Remote Login
+    link(rel='stylesheet',href='/stylesheets/remote_login.css')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js')
+    script
+      $(function() {
+        $('#login_form').submit(function() {
+          $.post('/login', $('#login_form').serialize(), function(data) {
+            var response = $.parseJSON(data)
+            if(response.success) {
+              parent.postMessage({ access_token: response.access_token, email: response.email, username: response.username }, '#{url}')
+            } else {
+              console.log(response.error);
+            }
+          })
+          return false;
+        })
+        $('input').keydown(function(e){
+          if (e.keyCode == 13) {
+            $(this).parents('form').submit();
+            return false;
+          }
+        });
+      })
+  body
+    #mini-dash
+    - if (access_token)
+      script
+        parent.postMessage({ access_token: '#{access_token}', email: '#{email}', username: '#{username}' }, '#{url}')
+    - else
+      .register
+        a(href='http://www.graffidia.com',target='_blank') Register
+      .login
+        form#login_form(name='login')
+          input.username(type='text',name='username')
+          input.password(type='password',name='password')
