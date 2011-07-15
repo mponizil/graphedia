@@ -39,8 +39,10 @@
   display:none;
   font-size:13px;
 }
-#graphedia_container iframe {
+#graphedia_container iframe.remote-login {
   border:none !important;
+  width:100% !important;
+  height:30px !important;
 }
 #graphedia_container .new-comment {
   position:absolute !important;
