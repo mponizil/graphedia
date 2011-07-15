@@ -31,35 +31,33 @@ script
   });
 
 #mini-dash
-  .register
-    a(href='http://www.graffidia.com',target='_blank') Register
   .login
     form#login_form(name='login')
-      input.username(type='text',name='username')
-      input.password(type='password',name='password')
+      input(type='text',name='username')
+      input(type='password',name='password')
 
 #main
   img#logo(src='/images/wall.jpg')
   img#tagline(src='images/tagline.png')
 
-  a#login Login
+  a#login(href='javascript:void(0)') Login
   
   #register  
     h2 Register.
     form#register_form(name='register')
-      table
+      table(width='400')
         tr
           td.type Email:
           td
-            input.email(type='text',name='email')
+            input(type='text',name='email')
         tr 
           td.type Username:
           td
-            input.username(type='text',name='username')
+            input(type='text',name='username')
         tr
           td.type Password:
           td
-            input.password(type='password',name='password')
+            input(type='password',name='password')
         tr
           td
           td(align='right')

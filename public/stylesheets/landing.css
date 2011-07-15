@@ -20,7 +20,7 @@ h2 {
   padding-right: 20px;
 }
 
-a {color: #5299C4;}
+a {color: #5299C4;text-decoration:none;}
 a:active,
 a:visited {text-decoration: underline;color: #5299C4;}
 a:hover {color: #2F6270;}
@@ -55,14 +55,10 @@ button {
   font-size:13px;
   z-index:20;
 }
-.register {
-  float:left;
-  margin-left:20px;
-}
 .login {
   float:right;
 }
-.login .username {
+.login input[name='username'] {
   float:left;
   margin-right:6px;
   width:120px;
@@ -73,7 +69,7 @@ button {
   border: 0px;
   padding: 4px 8px;
 }
-.login .password {
+.login input[name='password'] {
   float:left;
   margin-right:14px;
   width:120px;
@@ -91,16 +87,20 @@ button {
   position: relative;
 }
 
+#login {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 #logo {
-  position: relative;
-  display: block;
-  bottom: 30px;
+  position: absolute;
 }
 
 #tagline {
-  position: relative;
-  bottom: 80px;
-  left:70px;
+  position: absolute;
+  top: 470px;
+  left: 90px;
   -webkit-transform: rotate(11deg);
   -moz-transform: rotate(-15deg);
   -o-transform: rotate(-15deg);
@@ -109,15 +109,12 @@ button {
 
 #register {
   position: absolute;
-  margin: 0 auto;
-  color: black;
   left: 500px;
   top: 220px;
-}
-#register, #register:visited{
   color: #ABB4AF;
-  text-decoration: none;
-  padding-left: 5px;
+}
+#register h2 {
+  color:black;
 }
 #register input[type='text'],
 #register input[type='password'] {
@@ -130,14 +127,7 @@ button {
   padding-left: 5px;
   width: 100%;
 }
-
-#login {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.submit {
+#register input[type='submit'] {
   font-family: Arial;
   color: black;
   font-size: 18px;
