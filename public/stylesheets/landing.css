@@ -1,8 +1,3 @@
-h1{
-  font-size: 20px;
-  font-family: helvetica;
-}
-
 html {
 /*  background: url(../images/wall.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -14,37 +9,115 @@ html {
   font: 14px Arial, Helvetica, sans-serif;
 }
 
-#logo{
-  position: relative;
-  display: block;
-  bottom: 30px;
+h1{
+  font-size: 20px;
+  font-family: helvetica;
+}
+h2 {
+  font-family: 'Bowlby One SC', serif;
+  font-size: 40px;
+  float: right;
+  padding-right: 20px;
 }
 
-#tagline{
+a {color: #5299C4;text-decoration:none;}
+a:active,
+a:visited {text-decoration: underline;color: #5299C4;}
+a:hover {color: #2F6270;}
+
+input[type='text'],
+input[type='password'],
+input[type='submit'],
+textarea,
+button {
+  font:14px 'Lucida Grande',Helvetica,Arial,sans-serif;
+  padding:4px;
+  outline:none;
+}
+input[type='text'],
+input[type='password'] {
+  width:250px;
+}
+input[type='submit'],
+button {
+  font-size:18px;
+}
+
+#mini-dash {
+  width:100%;
+  padding:8px 0;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  position:fixed;
+  top:0;
+  left:0;
+  display:none;
+  font-size:13px;
+  z-index:20;
+}
+.login {
+  float:right;
+}
+.login input[name='username'] {
+  float:left;
+  margin-right:6px;
+  width:120px;
+  height: 17px;
+  border-radius: 13px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  padding: 4px 8px;
+}
+.login input[name='password'] {
+  float:left;
+  margin-right:14px;
+  width:120px;
+  height: 17px;
+  border-radius: 13px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  padding: 4px 8px;
+}
+
+#main {
+  width: 1000px;
+  margin: 0 auto;
   position: relative;
-  bottom: 80px;
-  left:70px;
+}
+
+#login {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#logo {
+  position: absolute;
+}
+
+#tagline {
+  position: absolute;
+  top: 470px;
+  left: 90px;
   -webkit-transform: rotate(11deg);
   -moz-transform: rotate(-15deg);
   -o-transform: rotate(-15deg);
   transform: rotate(-15deg);
 }
 
-#signup{
+#register {
   position: absolute;
-  margin: 0 auto;
-  color: black;
   left: 500px;
   top: 220px;
+  color: #ABB4AF;
 }
-
-#main{
-  width: 1000px;
-  margin: 0 auto;
-  position: relative;
+#register h2 {
+  color:black;
 }
-
-.user_input{
+#register input[type='text'],
+#register input[type='password'] {
   outline: none;
   height: 25px;
   font-size: 15px;
@@ -54,85 +127,7 @@ html {
   padding-left: 5px;
   width: 100%;
 }
-
-table{
-  width: 100%;
-}
-
-tr{
-  height: 40px;
-}
-
-.type{
-  text-align: right;
-}
-
-#register_form{
- width: 400px; 
-}
-
-.user_input{
-  width: 100%;
-  padding: 4px 8px
-}
-
-.mini-dash {
-  width:100%;
-  background:rgba(0,0,0,0.6);
-  color:#fff;
-  position:fixed;
-  top:0;
-  left:0;
-  display:none;
-  opacity: .6;
-  height: 0px;
-  line-height: 35px;
-  text-align: left;
-  font-size: 13px;
-  z-index: 2147483647;
-}
-
-.login_input{
-  outline: none;
-  height: 17px;
-  border-radius: 13px;
-  border: 0px;
-  padding-left: 3px;
-}
-
-.mini_submit{
-  display:none;
-}
-
-#login_form{
-  float: right;
-  padding-right: 5px;
-}
-
-#register, #register:visited{
-  color: #ABB4AF;
-  text-decoration: none;
-  padding-left: 5px;
-}
-
-#login {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: #5299C4;
-}#login:active, :visited{
-  text-decoration: underline;
-  color: #5299C4;
-}#login:hover {
-  color: #2F6270;
-  cursor: pointer;
-}
-
-
-.submit {
-  display:inline;
-  position:relative;
-  left: 40%;
+#register input[type='submit'] {
   font-family: Arial;
   color: black;
   font-size: 18px;
@@ -152,26 +147,4 @@ tr{
   cursor: pointer;
 }.submit:hover {
   background: #1c4f38;
-}
-
-#or{
-  color: black;
-  display: inline;
-  position: relative;
-  padding: 0px;
-  left: 57%;
-  top: 58%;
-}
-
-#buttons{
-  position: relative;
-  bottom: 30px;
-  height: 51px;
-}
-
-#copy{
-  font-family: 'Bowlby One SC', serif;
-  font-size: 40px;
-  float: right;
-  padding-right: 20px;
 }

@@ -46,10 +46,9 @@ var routes = new Routes(HOST, PORT, URL);
 app.get('/', routes.dashboard);
 app.get('/dashboard', routes.dashboard);
 app.post('/login', routes.login);
-app.get('/login', routes.login);
+app.get('/remote_login', routes.remote_login)
 app.get('/logout', routes.logout);
 app.post('/register', routes.register);
-app.get('/mini_dash', routes.mini_dash);
 app.get('/bookmarklet', function(req, res) {
   res.render('bookmarklet', { url: URL });
 });
@@ -65,10 +64,20 @@ io.set('log level',2)
 io.sockets.on('connection', function(socket) {
   var graphedia = new Graphedia(socket);
   
-  socket.on('init', function(url, fn) {
+  socket.on('graphedia.init', function(url, fn) {
     graphedia.init(url, fn)
+  })
+  socket.on('user.load', function(user_id, fn) {
+    graphedia.load_user(user_id, fn);
+  })
+  socket.on('user.access_token', function(access_token) {
+    graphedia.access_token(access_token, socket.id);
   })
   socket.on('comments.new', function(data, fn) {
     graphedia.new_comment(data, fn);
+  })
+  
+  socket.on('disconnect', function() {
+    graphedia.disconnect(socket.id);
   })
 })

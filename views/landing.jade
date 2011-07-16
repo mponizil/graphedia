@@ -1,46 +1,9 @@
-.mini-dash
-  a#register(href='http://www.graffidia.com') Register
-  form#login_form
-    | Username:
-    input.login_input(type='text',name='username')
-    |&nbsp;&nbsp;&nbsp;&nbsp;Password:
-    input.login_input(type='password',name='password')
-    input.mini_submit(type='submit')
-
-#main
-  img(src='/images/wall.jpg', id='logo')
-  img(src='images/tagline.png', id='tagline')  
-
-  #login Login
-  
-  #signup  
-    #copy
-      | Register.
-    form#register_form(name='register')
-      table
-        tr
-          td.type Email:
-          td
-            input.user_input(type='text',name='email')
-        tr 
-          td.type Username:
-          td
-            input.user_input(type='text',name='username')
-        tr
-          td.type Password:
-          td
-            input.user_input(type='password',name='password')
-        tr
-      #buttons
-        input.submit(type='submit', value="Submit")
-
-
 script
   $(function() { 
     $('#register_form').submit(function() {
       $.post("/register", $("#register_form").serialize(), function(data) {
         var response = $.parseJSON(data)
-        if(response.success) window.location = "/dashboard";
+        if(response.success) window.location = '/dashboard';
         else alert(response.error)
       })
       return false;
@@ -48,11 +11,8 @@ script
 
     $("#login").click(function(){
       $("#login").hide();
-      $(".mini-dash").animate({
-        width: "100%",
-        height: "35px"
-      }, 500 );
-      $(".login_input:first").focus();
+      $("#mini-dash").slideDown('fast')
+      $("input.username").focus();
     });
 
     $('input').keydown(function(e){
@@ -64,8 +24,43 @@ script
 
     $('#login_form').submit(function() {
       $.post("/login", $("#login_form").serialize(), function(data) {
-        console.log(data)
+        var response = $.parseJSON(data);
+        if(response.success) window.location = '/dashboard';
+        else alert(response.error);
       })
       return false;
     })
   });
+
+#mini-dash
+  .login
+    form#login_form(name='login')
+      input(type='text',name='username')
+      input(type='password',name='password')
+
+#main
+  img#logo(src='/images/wall.jpg')
+  img#tagline(src='images/tagline.png')
+
+  a#login(href='javascript:void(0)') Login
+  
+  #register  
+    h2 Register.
+    form#register_form(name='register')
+      table(width='400')
+        tr
+          td.type Email:
+          td
+            input(type='text',name='email')
+        tr 
+          td.type Username:
+          td
+            input(type='text',name='username')
+        tr
+          td.type Password:
+          td
+            input(type='password',name='password')
+        tr
+          td
+          td(align='right')
+            input.submit(type='submit', value="Submit")
