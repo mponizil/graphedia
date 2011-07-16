@@ -18,6 +18,7 @@ h2 {
   font-size: 40px;
   float: right;
   padding-right: 20px;
+  line-height: 0px;
 }
 
 a {color: #5299C4;text-decoration:none;}
@@ -81,6 +82,11 @@ button {
   padding: 4px 8px;
 }
 
+.type{
+  width: 70px;
+  text-align: center;
+}
+
 #main {
   width: 1000px;
   margin: 0 auto;
@@ -109,7 +115,7 @@ button {
 
 #register {
   position: absolute;
-  left: 500px;
+  left: 650px;
   top: 220px;
   color: #ABB4AF;
 }
