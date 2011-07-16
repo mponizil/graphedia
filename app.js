@@ -67,14 +67,17 @@ io.sockets.on('connection', function(socket) {
   socket.on('graphedia.init', function(url, fn) {
     graphedia.init(url, fn)
   })
-  socket.on('user.load', function(user_id, fn) {
+  socket.on('users.load', function(user_id, fn) {
     graphedia.load_user(user_id, fn);
   })
-  socket.on('user.access_token', function(access_token) {
+  socket.on('users.access_token', function(access_token) {
     graphedia.access_token(access_token, socket.id);
   })
   socket.on('comments.new', function(data, fn) {
-    graphedia.new_comment(data, fn);
+    graphedia.new_comment(data.access_token, data.comment, data.x, data.y, fn);
+  })
+  socket.on('comments.upvote', function(data) {
+    graphedia.upvote(data.access_token, data.comment_id)
   })
   
   socket.on('disconnect', function() {
