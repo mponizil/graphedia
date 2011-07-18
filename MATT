@@ -1,0 +1,56 @@
+// get all comments from mongo
+Comment.findPage(_g.page_hash, 2)
+Comment.find({ page_hash: _g.page_hash }, function(err, comments) {
+  var id_list = [];
+  var authorMap = {};
+  for () {
+    id_list.push();
+    authorMap[comment.author_id] = comment;
+  }
+  User.find({ _id: {$in: id_list} }, function(err, authors) {
+    for (i in authors) {
+      comments[authorMap[]].author = authors[i]
+    }
+    fn(comments);
+  })
+})
+
+{
+  _id: 'page_hash-parent_id-0'
+  page_url,
+  page_hash,
+  parent_id,
+  num_comments,
+  comments: [{
+    author,
+    date,
+    body,
+    coords,
+    votes
+  }, { ... }]
+}
+
+{
+  _id: 'page_hash-parent_id-1'
+  page_url,
+  page_hash,
+  parent_id,
+  num_comments,
+  comments: [{
+    author,
+    date,
+    body,
+    coords,
+    votes,
+    replies: 5
+  }, { ... }]
+}
+
+
+db.comment.count({_id: /^page_hash-parent_id/, {comments: {$size: 100}}})
+
+db.comment.update({_id: 'page_hash-parent_id-0'}, {$inc: {num_comments: 1}, $push: {comments: {...}}})
+
+db.user.find({_id: {$in: id_list}})
+
+// store user data in redis hash as well as mongo
