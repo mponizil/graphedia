@@ -67,7 +67,7 @@
 }
 
 #graphedia_container .new-comment .commentSubmit{
-  float: right;
+  display: none;
 }
 
 #graphedia_container .comment {
