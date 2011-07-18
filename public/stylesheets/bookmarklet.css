@@ -4,30 +4,36 @@
   font:14px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
   color:#000 !important;
 }
+
 #graphedia_container input[type='text'],
 #graphedia_container input[type='password'],
 #graphedia_container input[type='submit'],
 #graphedia_container textarea,
 #graphedia_container button {
-  font:14px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
+  font:12px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
   padding:4px !important;
   outline:none;
 }
+
 #graphedia_container input[type='text'],
 #graphedia_container input[type='password'] {
   width:250px !important;
 }
+
 #graphedia_container input[type='submit'],
 #graphedia_container button {
   font-size:18px !important;
 }
+
 #graphedia_container .italic {
   font-style:italic;
   color:#ccc;
 }
+
 #graphedia_container .form-error {
   border:2px solid #9d1616 !important;
 }
+
 #graphedia_container #mini-dash {
   width:100%;
   padding:8px 0;
@@ -39,14 +45,30 @@
   display:none;
   font-size:13px;
 }
+
 #graphedia_container iframe.remote-login {
   border:none !important;
   width:100% !important;
   height:30px !important;
 }
+
 #graphedia_container .new-comment {
   position:absolute !important;
 }
+
+#graphedia_container .new-comment .commentField{
+  border: 1px solid #8D9793 !important;
+  color: #616E67;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  border-radius: 10px !important;
+  padding-left: 10px !important;
+}
+
+#graphedia_container .new-comment .commentSubmit{
+  float: right;
+}
+
 #graphedia_container .comment {
   max-width:200px !important;
   background:rgba(239,239,226,0.9) !important;
@@ -57,6 +79,6 @@
   -webkit-box-shadow: 0 0 3px #888 !important;
   box-shadow: 0 0 3px #888 !important;
   padding:10px !important;
-  font:14px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
+  font:12px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
   color:#000 !important;
 }
