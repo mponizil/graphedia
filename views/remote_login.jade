@@ -9,7 +9,6 @@ html
         $('#login_form').submit(function() {
           $.post('/login', $('#login_form').serialize(), function(data) {
             var response = $.parseJSON(data)
-            alert(response)
             if(response.success) {
               parent.postMessage({ access_token: response.access_token, email: response.email, username: response.username }, '#{url}')
             } else {
