@@ -4,7 +4,7 @@ script
       $.post("/register", $("#register_form").serialize(), function(data) {
         var response = $.parseJSON(data)
         if(response.success) window.location = '/dashboard';
-        else alert(response.error)
+        else console.log(response.error)
       })
       return false;
     })
