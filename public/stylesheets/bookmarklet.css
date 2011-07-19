@@ -57,7 +57,7 @@
 }
 
 #graphedia_container .commentField{
-  width: 200px;
+  width: 210px;
   border: 1px solid #8D9793 !important;
   color: #616E67;
   -webkit-border-radius: 10px !important;
@@ -70,8 +70,12 @@
   display: none;
 }
 
+#graphedia_container .commentTwin{
+  width: 190px !important; /* width - minus the padding = 210 - 20 */
+}
+
 #graphedia_container .comment {
-  width:190px !important; /* width - minus the padding = 200 - 10 */
+  width:190px !important; /* width - minus the padding = 210 - 20 */
   background:rgba(239,239,226,0.9) !important;
   -webkit-border-radius: 10px !important;
   -moz-border-radius: 10px !important;
@@ -82,4 +86,5 @@
   padding:10px !important;
   font:12px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
   color:#000 !important;
+  word-wrap: break-word;
 }
