@@ -89,3 +89,22 @@
   color:#000 !important;
   word-wrap: break-word;
 }
+
+
+/*TODO: programmatically change color for different backgrounds*/
+#graphedia_container .commentAuthor{
+  position: absolute;
+  top: -16px;
+  left: 5px;
+  font-size: 10px;
+  color: #B4241D;
+}
+
+#graphedia_container .upvotes{
+  position: absolute;
+  top: -16px;
+  right: 5px;
+  font-size: 10px;
+  color: #888A8A;
+  font-weight: bold;
+}
