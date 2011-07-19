@@ -72,6 +72,7 @@
 
 #graphedia_container .commentTwin{
   width: 190px !important; /* width - minus the padding = 210 - 20 */
+/*  display: none !important;*/
 }
 
 #graphedia_container .comment {
