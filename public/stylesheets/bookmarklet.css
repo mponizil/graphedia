@@ -17,7 +17,7 @@
 
 #graphedia_container input[type='text'],
 #graphedia_container input[type='password'] {
-  width:250px !important;
+  width:200px !important;
 }
 
 #graphedia_container input[type='submit'],
@@ -56,25 +56,26 @@
   position:absolute !important;
 }
 
-#graphedia_container .new-comment .commentField{
+#graphedia_container .commentField{
+  width: 200px;
   border: 1px solid #8D9793 !important;
   color: #616E67;
   -webkit-border-radius: 10px !important;
   -moz-border-radius: 10px !important;
   border-radius: 10px !important;
-  padding-left: 10px !important;
+  padding: 10px !important;
 }
 
 #graphedia_container .new-comment .commentSubmit{
-  float: right;
+  display: none;
 }
 
 #graphedia_container .comment {
-  max-width:200px !important;
+  width:190px !important; /* width - minus the padding = 200 - 10 */
   background:rgba(239,239,226,0.9) !important;
-  -webkit-border-radius: 16px !important;
-  -moz-border-radius: 16px !important;
-  border-radius: 16px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  border-radius: 10px !important;
   -moz-box-shadow: 0 0 3px #888 !important;
   -webkit-box-shadow: 0 0 3px #888 !important;
   box-shadow: 0 0 3px #888 !important;

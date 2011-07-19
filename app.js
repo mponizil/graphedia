@@ -74,7 +74,7 @@ io.sockets.on('connection', function(socket) {
     graphedia.access_token(access_token, socket.id);
   })
   socket.on('comments.new', function(data, fn) {
-    graphedia.new_comment(data.access_token, data.comment_stream_id, data.comment, data.x, data.y, fn);
+    graphedia.new_comment(data.access_token, data.parent_id, data.comment, data.x, data.y, fn);
   })
   socket.on('comments.upvote', function(data, fn) {
     graphedia.upvote(data.access_token, data.comment_id, fn)
