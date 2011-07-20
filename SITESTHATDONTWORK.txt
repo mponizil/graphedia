@@ -1,2 +1,4 @@
 github.com - no load at all
 mongodb.org - load, and login, but no shift click - Uncaught TypeError: Object #<Object> has no method 'elastic'
+http://razorjack.net/quicksand/docs-and-demos.html#examples
+http://api.jquery.com/animate/
