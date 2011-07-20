@@ -1,27 +1,7 @@
-THE PLAN:
+do some QA with registering cuz i think something is broken there
 
-user runs bookmarklet
+make replies display correctly
 
-<SOCKET.IO> bookmarklet adds comments to dom
+resolve user id to username for every comment
 
-<JQUERY> bookmarklet adds iframe (graffidia.com/remote_login) to dom
-
-<BACKEND> remote_login checks cookie
-
-<SOCKET.IO> if bad, require login
-
-<AJAX> iframe makes ajax request to graffidia.com/login to authenticate (same ajax request that is made when logging in on graffidia.com)
-
-<BACKEND> if good, generate access_token and save it to user object
-
-<AJAX> return access token to iframe
-
-<JQUERY> iframe postMessage to 3rd party site with access token
-
-<SOCKET.IO> 3rd party site makes initial socket.io call with access token that backend uses to associate socket id with access_token/user in mongo
-
-<SOCKET.IO> 3rd party site includes access token in every socket.io call
-
-<BACKEND> backend: on socket call, identify user by the provided access token
-
-<BACKEND> backend: on socket disconnect, remove socket id and access token from user object in mongo
+store access tokens in an AccessTokens object instead of in the User object
