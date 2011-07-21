@@ -5,6 +5,12 @@
   color:#000 !important;
 }
 
+#graphedia_container ul,
+#graphedia_container li {
+  margin:0 !important;
+  padding:0 !important;
+  list-style:none !important;
+}
 #graphedia_container input[type='text'],
 #graphedia_container input[type='password'],
 #graphedia_container input[type='submit'],
