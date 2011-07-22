@@ -9,11 +9,8 @@ html
         $('#login_form').submit(function() {
           $.post('/login', $('#login_form').serialize(), function(data) {
             var response = $.parseJSON(data)
-            if(response.success) {
-              parent.postMessage({ access_token: response.access_token, email: response.email, username: response.username }, '#{url}')
-            } else {
-              console.log("nope")
-            }
+            if(response.success) parent.postMessage({ access_token: response.access_token, _id: response._id, username: response.username }, '#{url}')
+            else console.log("nope")
           })
           return false;
         })
@@ -28,7 +25,7 @@ html
     #mini-dash
     - if (access_token)
       script
-        parent.postMessage({ access_token: '#{access_token}', email: '#{email}', username: '#{username}' }, '#{url}')
+        parent.postMessage({ access_token: '#{access_token}', _id: '#{_id}', username: '#{username}' }, '#{url}')
     - else
       .register
         a(href='http://www.graffidia.com',target='_blank') Register
