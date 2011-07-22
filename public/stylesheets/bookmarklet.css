@@ -88,6 +88,10 @@
   height:30px !important;
 }
 
+
+/*
+ * a created comment
+ */
 #graphedia_container .new-comment-field {
   width: 210px !important;
   height: 37px;
@@ -100,6 +104,12 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+#graphedia_container .remove {
+  position:absolute;
+  top:-20px;
+  right:0;
+  cursor:pointer;
 }
 
 
@@ -139,13 +149,17 @@
   color: #B4241D !important;
 }
 
-#graphedia_container .upvotes{
+#graphedia_container .upvotes {
   position: absolute !important;
   top: -16px !important;
   right: 5px !important;
   font-size: 10px !important;
   color: #888A8A !important;
   font-weight: bold !important;
+  cursor: pointer !important;
+}
+#graphedia_container .reply {
+  cursor: pointer !important;
 }
 
 

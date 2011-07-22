@@ -74,10 +74,10 @@ io.sockets.on('connection', function(socket) {
     graphedia.access_token(access_token, socket.id);
   })
   socket.on('comments.new', function(data, fn) {
-    graphedia.new_comment(data.access_token, data.parent_id, data.comment, data.x, data.y, fn);
+    graphedia.new_comment(data.access_token, data.parent_id, data.comment, data.page_x, data.page_y, fn);
   })
   socket.on('comments.upvote', function(data, fn) {
-    graphedia.upvote(data.access_token, data.comment_id, fn)
+    graphedia.upvote(data.access_token, data.parent_id, data.comment_id, fn)
   })
   
   socket.on('disconnect', function() {
