@@ -63,6 +63,10 @@
   font-style:italic;
   color:#ccc;
 }
+#graphedia_container .highlight {
+  background-color:#32ef28;
+  padding:2px;
+}
 #graphedia_container .form-error {
   border:2px solid #9d1616 !important;
 }
@@ -92,6 +96,9 @@
 /*
  * a created comment
  */
+#graphedia_container .new-comment {
+  position: relative !important;
+}
 #graphedia_container .new-comment-field {
   width: 210px !important;
   height: 37px;

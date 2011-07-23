@@ -14,7 +14,7 @@
 (function(jQuery){ 
 	jQuery.fn.extend({  
 		elastic: function() {
-		
+		  
 			//	We will create a div clone of the textarea
 			//	by copying these attributes from the textarea to the div.
 			var mimics = [
@@ -47,8 +47,8 @@
 				if ( this.type !== 'textarea' ) {
 					return false;
 				}
-					
-			var $textarea	= $g(this),
+				
+				var $textarea	= $g(this),
 				$twin		= $g('<div />').addClass('comment-twin').css({'display':'none','position': 'absolute','word-wrap':'break-word', 'padding':'10px','font-size':'12px'}),
 				lineHeight	= parseInt($textarea.css('line-height'),10) || parseInt($textarea.css('font-size'),'10'),
         minheight  =  parseInt($textarea.css('height'),10) || lineHeight*3,
@@ -157,3 +157,5 @@
         } 
     }); 
 })(jQuery);
+
+var abeshit = 'done'

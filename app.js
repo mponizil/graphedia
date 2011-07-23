@@ -71,7 +71,7 @@ io.sockets.on('connection', function(socket) {
     graphedia.load_user(user_id, fn);
   })
   socket.on('users.access_token', function(access_token) {
-    graphedia.access_token(access_token, socket.id);
+    graphedia.save_socket_id(access_token, socket.id);
   })
   socket.on('comments.new', function(data, fn) {
     graphedia.new_comment(data.access_token, data.parent_id, data.comment, data.page_x, data.page_y, fn);
