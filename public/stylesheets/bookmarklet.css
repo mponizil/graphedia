@@ -2,13 +2,13 @@
  * reset
  */
 #graphedia_container div, #graphedia_container span, #graphedia_container applet, #graphedia_container object, #graphedia_container iframe, #graphedia_container h1, #graphedia_container h2, #graphedia_container h3, #graphedia_container h4, #graphedia_container h5, #graphedia_container h6, #graphedia_container p, #graphedia_container blockquote, #graphedia_container pre, #graphedia_container a, #graphedia_container abbr, #graphedia_container acronym, #graphedia_container address, #graphedia_container big, #graphedia_container cite, #graphedia_container code, #graphedia_container del, #graphedia_container dfn, #graphedia_container em, #graphedia_container img, #graphedia_container ins, #graphedia_container kbd, #graphedia_container q, #graphedia_container s, #graphedia_container samp, #graphedia_container small, #graphedia_container strike, #graphedia_container strong, #graphedia_container sub, #graphedia_container sup, #graphedia_container tt, #graphedia_container var, #graphedia_container b, #graphedia_container u, #graphedia_container i, #graphedia_container center, #graphedia_container dl, #graphedia_container dt, #graphedia_container dd, #graphedia_container ol, #graphedia_container ul, #graphedia_container li, #graphedia_container fieldset, #graphedia_container form, #graphedia_container label, #graphedia_container legend, #graphedia_container table, #graphedia_container caption, #graphedia_container tbody, #graphedia_container tfoot, #graphedia_container thead, #graphedia_container tr, #graphedia_container th, #graphedia_container td, #graphedia_container article, #graphedia_container aside, #graphedia_container canvas, #graphedia_container details, #graphedia_container figcaption, #graphedia_container figure, #graphedia_container footer, #graphedia_container header, #graphedia_container hgroup, #graphedia_container menu, #graphedia_container nav, #graphedia_container section, #graphedia_container summary, #graphedia_container time, #graphedia_container mark, #graphedia_container audio, #graphedia_container video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	outline: 0 !important;
+	font-size: 100% !important;
+	font: inherit !important;
+	vertical-align: baseline !important;
 }
 
 
@@ -33,6 +33,9 @@
   list-style:none !important;
 }
 #graphedia_container ul {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   margin-left: 10px !important;
   border-left: 1px solid #D3DBDB !important;
   padding-left: 10px !important;
@@ -44,16 +47,16 @@
 #graphedia_container button {
   font:12px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
   padding:4px !important;
-  outline:none;
+  outline:none !important;
 }
 #graphedia_container input[type='text'],
 #graphedia_container input[type='password'] {
-  width:200px;
+  width:200px !important;
 }
 
 #graphedia_container input[type='submit'],
 #graphedia_container button {
-  font-size:18px;
+  font-size:18px !important;
 }
 
 
@@ -123,11 +126,14 @@
 
 /*
  * a displayed comment
- */
+ */ 
 #graphedia_container .comment-container {
   width: 190px;
-  margin-bottom: 35px !important;
-  position: relative
+  margin-top: 35px !important;
+  position: relative;
+}
+#graphedia_container .top-level > li:first-child > .comment-parent > .comment-container{
+  margin-top: 0 !important;
 }
 #graphedia_container .comment {
   width:190px !important; /* width - minus the padding = 210 - 20 */
