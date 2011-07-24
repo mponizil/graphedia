@@ -92,6 +92,6 @@ io.sockets.on('connection', function(socket) {
 
 var Observer = {
   new_event: function(type, data) {
-    console.log(type, data)
+    // console.log(type, data)
   }
 }

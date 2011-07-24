@@ -55,7 +55,6 @@
 				maxheight	= parseInt($textarea.css('max-height'),10) || Number.MAX_VALUE,
 				goalheight	= 0;
 				
-								console.log($twin)
 				// Opera returns max-height of -1 if not set
 				if (maxheight < 0) { maxheight = Number.MAX_VALUE; }
 					
