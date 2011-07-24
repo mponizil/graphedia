@@ -1,7 +1,3 @@
 do some QA with registering cuz i think something is broken there
 
-make replies display correctly
-
-resolve user id to username for every comment
-
 store access tokens in an AccessTokens object instead of in the User object
