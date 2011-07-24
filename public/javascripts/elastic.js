@@ -157,5 +157,3 @@
         } 
     }); 
 })(jQuery);
-
-var abeshit = 'done'

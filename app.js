@@ -67,6 +67,9 @@ io.sockets.on('connection', function(socket) {
   socket.on('graphedia.init', function(url, fn) {
     graphedia.init(url, fn)
   })
+  socket.on('graphedia.leave', function() {
+    graphedia.leave();
+  })
   socket.on('users.load', function(user_id, fn) {
     graphedia.load_user(user_id, fn);
   })
