@@ -77,9 +77,11 @@ io.sockets.on('connection', function(socket) {
     graphedia.confirm_socket(access_token, socket.id);
   })
   socket.on('comments.new', function(data, fn) {
+    Observer.new_event('comment', { parent_id: data.parent_id });
     graphedia.new_comment(data.access_token, data.parent_id, data.comment, data.page_x, data.page_y, fn);
   })
   socket.on('comments.upvote', function(data, fn) {
+    Observer.new_event('upvote', { parent_id: data.parent_id, comment_id: data.comment_id });
     graphedia.upvote(data.access_token, data.parent_id, data.comment_id, fn)
   })
   
@@ -87,3 +89,9 @@ io.sockets.on('connection', function(socket) {
     graphedia.disconnect(socket.id);
   })
 })
+
+var Observer = {
+  new_event: function(type, data) {
+    console.log(type, data)
+  }
+}

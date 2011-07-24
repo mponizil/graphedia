@@ -1,5 +1,15 @@
-h1 sup yo
-br
-a(href="javascript:var g=document.getElementById('graphedia');if(!g){g=document.createElement('script');g.setAttribute('src','http://"+url+"/js/bookmarklet.js?'+Date.now());g.setAttribute('type','text/javascript');g.setAttribute('id','graphedia');document.body.appendChild(g);void(0);}") save bookmarklet
-br
-a(href='/logout') logout
+#welcome
+  h1 sup #{username}
+#trending
+  | this is where all the good trending shit goes
+#my-graffidia
+  | welcome to my graffidia
+  - my_comments.forEach(function(comment_stream) {
+    - comment_stream.comments.forEach(function(comment) {
+    p #{comment.body} (#{comment.ups})
+    - })
+  - })
+#extras
+  a(href="javascript:var g=document.getElementById('graphedia');if(!g){g=document.createElement('script');g.setAttribute('src','http://"+url+"/js/bookmarklet.js?'+Date.now());g.setAttribute('type','text/javascript');g.setAttribute('id','graphedia');document.body.appendChild(g);void(0);}") save bookmarklet
+  br
+  a(href='/logout') logout
