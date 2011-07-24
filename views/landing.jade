@@ -1,41 +1,9 @@
-script
-  $(function() { 
-    $('#register_form').submit(function() {
-      $.post("/register", $("#register_form").serialize(), function(data) {
-        var response = $.parseJSON(data)
-        if(response.success) window.location = '/dashboard';
-        else console.log(response.error)
-      })
-      return false;
-    })
-
-    $("#login").click(function(){
-      $("#login").hide();
-      $("#mini-dash").slideDown('fast')
-      $("input.username").focus();
-    });
-
-    $('input').keydown(function(e){
-      if (e.keyCode == 13) {
-        $(this).parents('form').submit();
-        return false;
-      }
-    });
-
-    $('#login_form').submit(function() {
-      $.post("/login", $("#login_form").serialize(), function(data) {
-        var response = $.parseJSON(data);
-        if(response.success) window.location = '/dashboard';
-        else alert(response.error);
-      })
-      return false;
-    })
-  });
+script(src='/javascripts/landing.js')
 
 #mini-dash
   .login
     form#login_form(name='login')
-      input.username(type='text',name='username')
+      input(type='text',name='username')
       input(type='password',name='password')
 
 #main
@@ -61,6 +29,8 @@ script
           td
             input(type='password',name='password')
         tr
-          td
-          td.submitColumn(align='right')
-            input.submit(type='submit', value="Submit")
+          td(colspan='2')
+            .error-msg
+            .submit
+              input(type='submit', value="Submit")
+            div(style='clear:both;')

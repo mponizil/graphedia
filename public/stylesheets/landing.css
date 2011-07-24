@@ -43,7 +43,6 @@ table {
 }
 
 html {
-  color: #FFF;
   width: 100%;
   font: 14px Arial, Helvetica, sans-serif;
 }
@@ -81,6 +80,10 @@ input[type='password'] {
 input[type='submit'],
 button {
   font-size:18px;
+}
+
+.form-error {
+  border-color:red !important;
 }
 
 #mini-dash {
@@ -121,9 +124,9 @@ button {
   padding: 4px 8px;
 }
 
-.type{
+.type {
   width: 70px;
-  text-align: center;
+  text-align: right;
   color: #6C6D6D;
 }
 
@@ -177,6 +180,9 @@ button {
   margin-top: 10px;
   margin-left: 5px;
 }
+#register .submit {
+  float: right;
+}
 #register input[type='submit'] {
   position: relative;
   left: 20px;
@@ -198,6 +204,13 @@ button {
 /*  background: -moz-linear-gradient(top, #225238, #31754C);*/
 background: #3B423D;
   cursor: pointer;
-}.submit:hover {
+}
+#register input[type='submit']:hover {
   background: #1c4f38;
+}
+#register .error-msg {
+  width: 250px;
+  float: left;
+  color: red;
+  margin-top:10px;
 }
