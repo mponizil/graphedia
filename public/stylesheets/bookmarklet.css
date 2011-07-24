@@ -102,14 +102,14 @@
 /*
  * a created comment
  */
-#graphedia_container #reply-initial-list{
+#graphedia_container #reply-initial-list {
   border: none !important;
 }
  
-#graphedia_container #cp_0{ /*need this for shift click*/
+#graphedia_container #cp_0 { /*need this for shift click*/
   padding-top: 4px !important;
 } 
-#graphedia_container .new-comment-container{
+#graphedia_container .new-comment-container {
   padding-top: 4px !important;
   padding-left: 5px !important;
   font-size: 10px !important;
@@ -121,11 +121,12 @@
   -moz-box-shadow: 0 0 3px #888 !important;
   -webkit-box-shadow: 0 0 3px #888 !important;
   box-shadow: 0 0 3px #888 !important;
+  position: relative !important;
 } 
 #graphedia_container .new-comment {
   position: relative !important;
 }
-#graphedia_container .new-comment-form{
+#graphedia_container .new-comment-form {
   padding: 0;
   margin: 0;
   background: #FAFFFF !important;
@@ -149,7 +150,7 @@
 }
 #graphedia_container .remove {
   position:absolute;
-  top:-20px;
+  top:-14px;
   right:0;
   cursor:pointer;
 }
@@ -163,10 +164,10 @@
   margin-top: 13px !important;
   position: relative;
 }
-#graphedia_container .top-level > li:first-child > .comment-parent > .comment-container{
+#graphedia_container .top-level > li:first-child > .comment-parent > .comment-container {
   margin-top: 13px !important;
 }
-#graphedia_container .top-level{
+#graphedia_container .top-level {
   border: none !important;
 }
 #graphedia_container .comment {

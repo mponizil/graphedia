@@ -21,14 +21,17 @@ $(function() {
           })
         } else {
           password.addClass('form-error');
+          $("#register .error-msg").html("Please choose a password.");
           password.focus();
         }
       } else {
         username.addClass('form-error');
+        $("#register .error-msg").html("Please choose a username.");
         username.focus();
       }
     } else {
       email.addClass('form-error');
+      $("#register .error-msg").html("Please enter a valid email address.");
       email.focus();
     }
     return false;
