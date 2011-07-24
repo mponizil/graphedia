@@ -32,9 +32,10 @@
   padding:0 !important;
   list-style:none !important;
 }
-#graphedia_container li {
-  margin-left:10px !important;
-  border-left:2px solid green;
+#graphedia_container ul {
+  margin-left: 10px !important;
+  border-left: 1px solid #D3DBDB !important;
+  padding-left: 10px !important;
 }
 #graphedia_container input[type='text'],
 #graphedia_container input[type='password'],
@@ -124,7 +125,8 @@
  * a displayed comment
  */
 #graphedia_container .comment-container {
-  margin-bottom: 20px !important;
+  width: 190px;
+  margin-bottom: 35px !important;
   position: relative
 }
 #graphedia_container .comment {
@@ -159,14 +161,20 @@
 #graphedia_container .upvotes {
   position: absolute !important;
   top: -16px !important;
-  right: 5px !important;
+  right: -15px !important;
   font-size: 10px !important;
   color: #888A8A !important;
   font-weight: bold !important;
   cursor: pointer !important;
 }
 #graphedia_container .reply {
+  font-size: 11px !important;
+  color: #B8CAC2 !important;
   cursor: pointer !important;
+  float: right !important;
+  position: relative !important;
+  left: 18px;
+  top: 3px;
 }
 
 
