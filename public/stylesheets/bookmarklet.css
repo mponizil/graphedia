@@ -58,6 +58,9 @@
 #graphedia_container button {
   font-size:18px !important;
 }
+#graphedia_container li{
+  margin-top: 10px !important;
+}
 
 
 /*
@@ -95,23 +98,37 @@
   width:100% !important;
   height:30px !important;
 }
-
-
+  
 /*
  * a created comment
  */
+#graphedia_container .new-comment-container{
+  padding-top: 8px !important;
+  padding-left: 5px !important;
+  font-size: 10px !important;
+  color: #B4241D !important;
+} 
 #graphedia_container .new-comment {
   position: relative !important;
 }
+#graphedia_container .new-comment-form{
+  padding: 0;
+  margin: 0;
+  background: #FAFFFF !important;
+  opacity: .97 !important;
+}
 #graphedia_container .new-comment-field {
   width: 210px !important;
-  height: 37px;
-  border: 1px solid #8D9793 !important;
+  margin-top: -2px !important;
+  margin-left: -5px !important;
+  height: 27px;
   color: #616E67 !important;
-  -webkit-border-radius: 10px !important;
-  -moz-border-radius: 10px !important;
-  border-radius: 10px !important;
-  padding: 10px !important;
+  -webkit-border-radius: 2px !important;
+  -moz-border-radius: 2px !important;
+  border-radius: 2px !important;
+  border: none;
+  padding:5px 12px 5px 7px !important;
+  font-size: 12px !important;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -129,44 +146,52 @@
  */ 
 #graphedia_container .comment-container {
   width: 190px;
-  margin-top: 35px !important;
+  margin-top: 13px !important;
   position: relative;
 }
 #graphedia_container .top-level > li:first-child > .comment-parent > .comment-container{
-  margin-top: 0 !important;
+  margin-top: 13px !important;
+}
+#graphedia_container .top-level{
+  border: none !important;
 }
 #graphedia_container .comment {
   width:190px !important; /* width - minus the padding = 210 - 20 */
   text-align: left !important;
-  background:rgba(239,239,226,0.9) !important;
-  -webkit-border-radius: 10px !important;
-  -moz-border-radius: 10px !important;
-  border-radius: 10px !important;
+  background: #FAFFFF !important;
+  opacity: .97 !important;
+  -webkit-border-radius: 2px !important;
+  -moz-border-radius: 2px !important;
+  border-radius: 2px !important;
   -moz-box-shadow: 0 0 3px #888 !important;
   -webkit-box-shadow: 0 0 3px #888 !important;
   box-shadow: 0 0 3px #888 !important;
-  padding:10px !important;
+  padding: 20px 12px 5px 7px !important;
   font:12px 'Lucida Grande',Helvetica,Arial,sans-serif !important;
   color:#000 !important;
   word-wrap: break-word !important;
 }
-#graphedia_container .comment-twin {
+#graphedia_container #comment-twin {
   width: 190px !important; /* width - minus the padding = 210 - 20 */
   text-align: left !important;
-/*  display: none !important;*/
+  font-size: 12px !important;
+  padding-left: 7px !important;
+/*  display: visible   !important;*/
 }
 /*TODO: programmatically change color for different backgrounds*/
 #graphedia_container .comment-author {
+  z-index: 9999 !important;
   position: absolute !important;
-  top: -16px !important;
+  top: 5px !important;
   left: 5px !important;
   font-size: 10px !important;
   color: #B4241D !important;
 }
 
 #graphedia_container .upvotes {
+  z-index: 9999 !important;
   position: absolute !important;
-  top: -16px !important;
+  top: 3px !important;
   right: -15px !important;
   font-size: 10px !important;
   color: #888A8A !important;
@@ -179,8 +204,8 @@
   cursor: pointer !important;
   float: right !important;
   position: relative !important;
-  left: 18px;
-  top: 3px;
+  left: 16px;
+  top: -15px;
 }
 
 

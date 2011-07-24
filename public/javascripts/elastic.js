@@ -49,12 +49,13 @@
 				}
 				
 				var $textarea	= $g(this),
-				$twin		= $g('<div />').addClass('comment-twin').css({'display':'none','position': 'absolute','word-wrap':'break-word', 'padding':'10px','font-size':'12px'}),
+				$twin		= $g('<div />').attr('id','comment-twin').css({'display':'none','position': 'absolute','word-wrap':'break-word','font-size':'12px'}),
 				lineHeight	= parseInt($textarea.css('line-height'),10) || parseInt($textarea.css('font-size'),'10'),
         minheight  =  parseInt($textarea.css('height'),10) || lineHeight*3,
 				maxheight	= parseInt($textarea.css('max-height'),10) || Number.MAX_VALUE,
 				goalheight	= 0;
 				
+								console.log($twin)
 				// Opera returns max-height of -1 if not set
 				if (maxheight < 0) { maxheight = Number.MAX_VALUE; }
 					
@@ -83,7 +84,7 @@
 				
 					var curratedHeight = parseInt(height,10);
 					if($textarea.height() !== curratedHeight){
-						$textarea.css({'height': (curratedHeight + 10) + 'px','overflow':overflow}); //added + 10. it looks silly when it starts now, but we can fix that.
+						$textarea.css({'height': (curratedHeight + 5) + 'px','overflow':overflow}); //added + 10. it looks silly when it starts now, but we can fix that.
 						
 						// Fire the custom event resize
 						$textarea.trigger('resize');
