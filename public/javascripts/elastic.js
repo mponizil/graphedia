@@ -84,7 +84,7 @@
 				
 					var curratedHeight = parseInt(height,10);
 					if($textarea.height() !== curratedHeight){
-						$textarea.css({'height': (curratedHeight + 5) + 'px','overflow':overflow}); //added + 10. it looks silly when it starts now, but we can fix that.
+						$textarea.css({'height': (curratedHeight - 2) + 'px','overflow':overflow}); //added + 10. it looks silly when it starts now, but we can fix that.
 						
 						// Fire the custom event resize
 						$textarea.trigger('resize');
