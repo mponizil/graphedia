@@ -1,15 +1,90 @@
-#welcome
-  h1 sup #{username}
-#trending
-  | this is where all the good trending shit goes
-#my-graffidia
-  | welcome to my graffidia
-  - my_comments.forEach(function(comment_stream) {
-    - comment_stream.comments.forEach(function(comment) {
-    p #{comment.body} (#{comment.ups})
-    - })
-  - })
-#extras
-  a(href="javascript:var g=document.getElementById('graphedia');if(!g){g=document.createElement('script');g.setAttribute('src','http://"+url+"/js/bookmarklet.js?'+Date.now());g.setAttribute('type','text/javascript');g.setAttribute('id','graphedia');document.body.appendChild(g);void(0);}") save bookmarklet
-  br
-  a(href='/logout') logout
+#wrapper
+  #header
+    #infostuffs
+      img#logo(src='images/logo.png')
+      a#bookmarklet(href="javascript:var g=document.getElementById('graphedia');if(!g){g=document.createElement('script');g.setAttribute('src','http://"+url+"/js/bookmarklet.js?'+Date.now());g.setAttribute('type','text/javascript');g.setAttribute('id','graphedia');document.body.appendChild(g);void(0);}") drag bookmarklet
+      a#logout(href='/logout') logout
+    #name hello #{username}.
+
+  #section1
+    #column1
+      | my comments, yo
+      - my_comments.forEach(function(comment_stream) {
+      - comment_stream.comments.forEach(function(comment) {
+      p #{comment.body} (#{comment.ups})
+      - })
+      - })
+    #column2
+      | replies to my shit, dawg.
+      br
+      .reply
+        .author pork chop sandwhiches
+        .text i think you are pork belly ribs
+        .original
+          a(href='http://www.beefribsham.com') bacon ipsum dolor...
+      .reply
+        .author pork chop sandwhiches
+        .text i think you are pork belly ribs
+        .original
+          a(href='http://www.beefribsham.com') bacon ipsum dolor...
+      .reply
+        .author pork chop sandwhiches
+        .text i think you are pork belly ribs
+        .original in reply to 
+          a(href='http://www.beefribsham.com') bacon ipsum dolor...
+  #section2
+    #column3
+      | top comments, nigga
+      br
+      .comment
+        .author Babe the Pig
+        .text Shank t-bone pork loin
+      .comment
+        .author Babe the Pig
+        .text Shank t-bone pork loin
+      .comment
+        .author Babe the Pig
+        .text Shank t-bone pork loin
+      .comment
+        .author Babe the Pige
+        .text Shank t-bone pork loin
+    #column4
+      #top-sites
+        | top sites, cuntnugget.
+        br
+        .site 
+          .title 
+            a(href='beefribsham.com') beef ribs ham.com
+          .comment-number 42
+        .site 
+          .title 
+            a(href='beefribsham.com') beef ribs ham.com
+          .comment-number 42
+        .site 
+          .title 
+            a(href='beefribsham.com') beef ribs ham.com
+          .comment-number 42
+        .site 
+          .title
+            a(href='beefribsham.com') beef ribs ham.com
+          .comment-number 42
+      #firehouse
+        | fuckin' firehouse, bitch. click one of these bitches and be taken to the website
+        br
+        .comment
+          a(href='beefribsham.com') beef ribs ham.com
+          .author Babe the Pig
+          .text Shank t-bone pork loin
+        .comment
+          a(href='beefribsham.com') beef ribs ham.com
+          .author Babe the Pig
+          .text Shank t-bone pork loin
+        .comment
+          a(href='beefribsham.com') beef ribs ham.com
+          .author Babe the Pig
+          .text Shank t-bone pork loin
+        .comment
+          a(href='beefribsham.com') beef ribs ham.com
+          .author Babe the Pige
+          .text Shank t-bone pork loin
+  #footer

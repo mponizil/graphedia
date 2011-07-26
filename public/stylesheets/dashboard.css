@@ -1,6 +1,99 @@
-#welcome {
-  padding: 20px;
-  border-bottom:1px solid #000;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+}
+body{
+  background-color: #2F3530;
+  text-align: center;
+  min-width: 800px;
+}
+#header {
+  height: 65px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 3px dashed #8C8C8C;
+  background: black;
+  overflow: hidden;
+}
+#infostuffs{
+  position: relative;
+  float: right;
+  height: 100%;
+  padding-right: 100px;
+  width: 100px;
+}
+#bookmarklet{
+  display: inline;
+  position: absolute;
+  top: 47px;
+  font-size: 12px;
+  left: 10px;
+}
+#logout{
+  display: inline;
+  position: absolute;
+  top: 46px;
+  left: 145px;
+  font-size: 12px;
+}
+#logo{
+  padding: 0px 10px 10px 10px;
+  height: 72%;
+}
+#name{
+  position: relative;
+  float: left;
+  color: white;
+  font-size: 50px;
+  font-family: helvetica;
+  padding: 10px;
+}
+#name a, a:visited{
+  font-size: 12px;
 }
 #trending {
   padding: 20px;
@@ -12,4 +105,84 @@
 }
 #extras {
   padding: 20px;
+}
+#section1, #section2{ 
+  height: 80%;
+  overflow: hidden;
+}
+#column1, #column2, #column3, #column4{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+#top-sites, #firehose{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+#wrapper {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#section1 {
+    float: left; 
+    background: #ccc;
+    width: 50%;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+    #column1 {
+        float: left; 
+        background: #ccc;
+        width: 50%;
+        border-right: 2px solid black;
+    }
+
+    #column2 {
+        float: right;
+        background: #ccc;
+        width: 50%;
+        border-right: 2px solid black;
+    }
+
+#section2 {
+    float: right;
+    background: #ccc;
+    width: 50%;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+    #column3 {
+        float: left;
+        background: #ccc;
+        width: 50%;
+        border-right: 2px solid black;
+    }
+
+    #column4 {
+        float: right;
+        background: #ccc;
+        width: 50%;
+        height: 100%;
+    }
+#top-sites{
+  height: 30%;
+  border-bottom: 2px solid black;
+}
+#top-comments{
+  height: 70%;
+}
+#footer { 
+    background: #999;
+    clear: both;
 }
