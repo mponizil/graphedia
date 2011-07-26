@@ -92,6 +92,7 @@
   left:0;
   display:none;
   font-size:13px;
+  z-index:1000;
 }
 #graphedia_container iframe.remote-login {
   border:none !important;
