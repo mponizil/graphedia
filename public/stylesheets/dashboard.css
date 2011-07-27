@@ -41,24 +41,19 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+a {color: #5299C4;text-decoration:none;}
+a:active,
+a:visited {text-decoration: underline;color: #5299C4;}
+a:hover {color: #2F6270;}
+
 html, body{
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 body{
-  background-image: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      color-stop(0.03, rgb(2,0,54)),
-      color-stop(0.41, rgb(0,0,0))
-  );
-  background-image: -moz-linear-gradient(
-      center bottom,
-      rgb(2,0,54) 3%,
-      rgb(0,0,0) 41%
-  );
+  background: black;
   text-align: center;
   font-family: helvetica;
   margin: 0 auto;
@@ -123,7 +118,7 @@ body{
   height: 80%;
   overflow: hidden;
 }
-#column1, #column2, #column3, #top-sites, #firehose{
+#column4, #column1, #column2, #column3, #top-sites, #firehose{
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
@@ -132,77 +127,140 @@ body{
   margin: 0;
   overflow: hidden;
 }
-#column4{
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;
-}
 #wrapper {
   width: 1000px;
   height: 750px;
   margin: 0 auto;
   text-align: left;
 }
-
 #section1 {
-    float: left; 
-    background: #ccc;
-    width: 50%;
-    -webkit-border-bottom-left-radius: 10px;
-    -moz-border-radius-bottomleft: 10px;
-    border-bottom-left-radius: 10px;
+  float: left; 
+  background: #ccc;
+  width: 50%;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-left-radius: 10px;
 }
+#column1 {
+  float: left; 
+  background: #ccc;
+  width: 50%;
 
-    #column1 {
-        float: left; 
-        background: #ccc;
-        width: 50%;
-        border-right: 1px solid #6E6E6E;
-    }
-
-    #column2 {
-        float: right;
-        background: #ccc;
-        width: 50%;
-        border-right: 1px solid #6E6E6E;
-    }
-
+}
+#column2 {
+  float: right;
+  background: #ccc;
+  width: 50%;
+}
 #section2 {
-    float: right;
-    background: #ccc;
-    width: 50%;
-    overflow: hidden;
-    -webkit-border-bottom-right-radius: 10px;
-    -moz-border-radius-bottom-right: 10px;
-    border-bottom-right-radius: 10px;
+  float: right;
+  background: #ccc;
+  width: 50%;
+  overflow: hidden;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-bottom-right: 10px;
+  border-bottom-right-radius: 10px;
 }
-
-    #column3 {
-        float: left;
-        background: #ccc;
-        width: 50%;
-        border-right: 1px solid #6E6E6E;
-    }
-
-    #column4 {
-        float: right;
-        background: #ccc;
-        width: 50%;
-        height: 100%;
-    }
+#column3 {
+  float: left;
+  background: #ccc;
+  width: 50%;
+}
+#column4 {
+  float: right;
+  background: #ccc;
+  width: 50%;
+  height: 100%;
+}
 #top-sites{
   height: 30%;
-  border-bottom: 1px solid #6E6E6E;
 }
 #firehose{
   height: 70%;
 }
 #firehose .jspArrowDown{
-  padding-top:50px !important;
+  padding-top:39px !important;
   height: 0px !important;
 }
-
+.commentScroller{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  height: 100%;
+  margin-left: 10px;
+  overflow: hidden;
+}
+.sectionTitle{
+ padding: 10px;
+ font-weight: bold;
+ text-align: center;
+ background: #2A2829;
+ color: #FFF8DB;
+}
+/*.myComments{
+  background: #B9D7D9;
+}.myReplies{
+  background: #668284;
+}.topComments{
+  background: #99502C;
+}.topSites{
+  background: #2A2829;
+}.fireHose{
+  background: #493736;
+}
+*/
+.myComment{
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 200px;
+  background: white;
+  word-wrap: break-word;
+  position: relative;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.myCommentText{
+  display: inline;
+}
+.myCommentUps{
+  display: inline;
+  color: #A51733;
+  padding-right: 5px;
+}
+.comment, .reply, .site{
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 200px;
+  background: white;
+  word-wrap: break-word;
+  position: relative;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.text{
+  display: inline;
+}
+.topAuthor{
+  display: inline;
+  color: #A51733;
+}
+.points{
+  display: inline;
+  float: right;
+}
+.topText{
+  display: block;
+}
+.site-title{
+  display: inline;
+}
+.comment-number{
+  display: inline;
+  float: right;
+}
 #footer { 
-    background: #999;
-    clear: both;
+  background: #999;
+  clear: both;
 }

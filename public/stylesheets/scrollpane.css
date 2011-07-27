@@ -20,7 +20,7 @@
 {
 	position: absolute;
 	top: 0;
-	right: 3px;
+	right: 0px;
 	width: 6px;
 	height: 100%;
 }
@@ -91,7 +91,7 @@
 
 .jspVerticalBar .jspArrow
 {
-	height: 18px;
+	height: 38px;
 }
 
 .jspHorizontalBar .jspArrow
@@ -102,7 +102,7 @@
 }
 
 .jspArrowUp{
-  height: 0px !important;
+  height: 2px !important;
 }
 
 .jspVerticalBar .jspArrow:focus
