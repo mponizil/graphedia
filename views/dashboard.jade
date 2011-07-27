@@ -14,104 +14,19 @@ script(src='/javascripts/mousewheel.js')
   #section1
     #column1
       | my comments, yo
-      - my_comments.forEach(function(comment_stream) {
-      - comment_stream.comments.forEach(function(comment) {
+      - my_comments.forEach(function(comment) {
       p #{comment.body} (#{comment.ups})
-      - })
       - })
     #column2
       | replies to my shit, dawg.
       br
+      - replies_to_me.forEach(function(reply) {
       .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
+        .author #{reply.author}
+        .text #{reply.body}
         .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original in reply to 
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...          
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original in reply to 
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original in reply to 
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...          
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original in reply to 
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original in reply to 
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...          
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
-      .reply
-        .author pork chop sandwhiches
-        .text i think you are pork belly ribs
-        .original in reply to 
-          a(href='http://www.beefribsham.com') bacon ipsum dolor...
+          a(href="#{reply.page_url}") #{reply.parent_body}
+      - })
   #section2
     #column3
       | top comments, nigga

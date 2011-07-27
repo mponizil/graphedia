@@ -78,7 +78,7 @@ io.sockets.on('connection', function(socket) {
   })
   socket.on('comments.new', function(data, fn) {
     Observer.new_event('comment', { parent_id: data.parent_id });
-    graphedia.new_comment(data.access_token, data.parent_id, data.comment, data.page_x, data.page_y, fn);
+    graphedia.new_comment(data.access_token, data.parent_id, data.parent_author_id, data.comment, data.page_x, data.page_y, fn);
   })
   socket.on('comments.upvote', function(data, fn) {
     Observer.new_event('upvote', { parent_id: data.parent_id, comment_id: data.comment_id });
