@@ -44,11 +44,24 @@ table {
 html, body{
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 body{
-  background-color: #2F3530;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.03, rgb(2,0,54)),
+      color-stop(0.41, rgb(0,0,0))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(2,0,54) 3%,
+      rgb(0,0,0) 41%
+  );
   text-align: center;
-  min-width: 800px;
+  font-family: helvetica;
+  margin: 0 auto;
 }
 #header {
   height: 65px;
@@ -117,13 +130,18 @@ body{
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow: auto;
+  overflow: hidden;
+}
+#column4{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
 }
 #wrapper {
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
-    text-align: left;
+  width: 1000px;
+  height: 750px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 #section1 {
@@ -139,22 +157,23 @@ body{
         float: left; 
         background: #ccc;
         width: 50%;
-        border-right: 2px solid black;
+        border-right: 1px solid #6E6E6E;
     }
 
     #column2 {
         float: right;
         background: #ccc;
         width: 50%;
-        border-right: 2px solid black;
+        border-right: 1px solid #6E6E6E;
     }
 
 #section2 {
     float: right;
     background: #ccc;
     width: 50%;
+    overflow: hidden;
     -webkit-border-bottom-right-radius: 10px;
-    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottom-right: 10px;
     border-bottom-right-radius: 10px;
 }
 
@@ -162,7 +181,7 @@ body{
         float: left;
         background: #ccc;
         width: 50%;
-        border-right: 2px solid black;
+        border-right: 1px solid #6E6E6E;
     }
 
     #column4 {
@@ -173,11 +192,16 @@ body{
     }
 #top-sites{
   height: 30%;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid #6E6E6E;
 }
-#top-comments{
+#firehose{
   height: 70%;
 }
+#firehose .jspArrowDown{
+  padding-top:50px !important;
+  height: 0px !important;
+}
+
 #footer { 
     background: #999;
     clear: both;
