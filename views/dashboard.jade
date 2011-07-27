@@ -90,54 +90,12 @@ script(src='/javascripts/mousewheel.js')
           | Firehose
         .commentScroller
           br
+          - latest_comments.forEach(function(comment) {
           .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pig
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pig
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pig
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pige
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pig
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pig
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pig
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pige
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pig
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pig
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pig
-            .text Shank t-bone pork loin
-          .comment
-            a(href='beefribsham.com') beef ribs ham.com
-            .author Babe the Pige
-            .text Shank t-bone pork loin
+            a(href=comment.page_url) #{comment.page_url}
+            .author #{comment.author}
+            .text #{comment.body}
+          - })
           br
           br
   #footer
