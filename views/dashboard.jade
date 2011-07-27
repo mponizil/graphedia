@@ -45,32 +45,14 @@ script(src='/javascripts/mousewheel.js')
         | Top Comments
       .commentScroller
         br
+        - top_comments.forEach(function(comment) {
         .comment
-          .topAuthor Babe the Pig
-          .points 100
-          .topText Shank t-bone pork loin 
-        .comment
-          .topAuthor Babe the Pig
-          .points 100
-          .topText Shank t-bone pork loin 
-        .comment
-          .topAuthor Babe the Pig
-          .points 100
-          .topText Shank t-bone pork loin 
-        .comment
-          .topAuthor Babe the Pig
-          .points 100
-          .topText Shank t-bone pork loin 
-        .comment
-          .topAuthor Babe the Pig
-          .points 100
-          .topText Shank t-bone pork loin 
-        .comment
-          .topAuthor Babe the Pig
-          .points 100
-          .topText Shank t-bone pork loin 
-          br
-          br
+          .topAuthor #{comment.author}
+          .points #{comment.ups}
+          .topText #{comment.body}
+        - })
+        br
+        br
     #column4
       #top-sites
         .sectionTitle.topSites
