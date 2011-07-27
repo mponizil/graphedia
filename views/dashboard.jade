@@ -13,208 +13,155 @@ script(src='/javascripts/mousewheel.js')
 
   #section1
     #column1
-      | my comments, yo
-      - my_comments.forEach(function(comment) {
-      p #{comment.body} (#{comment.ups})
-      - })
+      .sectionTitle.myComments
+        | My Comments
+      .commentScroller
+        br
+        - my_comments.forEach(function(comment) {
+        .myComment 
+          .myCommentUps #{comment.ups}pts
+          .myCommentText #{comment.body} 
+        - })
+        br
+        br
     #column2
-      | replies to my shit, dawg.
-      br
-      - replies_to_me.forEach(function(reply) {
-      .reply
-        .author #{reply.author}
-        .text #{reply.body}
-        .original
-          a(href="#{reply.page_url}") #{reply.parent_body}
-      - })
+      .sectionTitle.myReplies
+        | My Replies
+      .commentScroller
+        br
+        - replies_to_me.forEach(function(reply) {
+        .reply
+          .author #{reply.author}
+          .text #{reply.body}
+          .original
+            a(href=reply.page_url) #{reply.parent_body}
+        - })
+
+        br
+        br
   #section2
     #column3
-      | top comments, nigga
-      br
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pige
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pige
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pige
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pige
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pige
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pig
-        .text Shank t-bone pork loin
-      .comment
-        .author Babe the Pige
-        .text Shank t-bone pork loin
-
+      .sectionTitle.topComments
+        | Top Comments
+      .commentScroller
+        br
+        .comment
+          .topAuthor Babe the Pig
+          .points 100
+          .topText Shank t-bone pork loin 
+        .comment
+          .topAuthor Babe the Pig
+          .points 100
+          .topText Shank t-bone pork loin 
+        .comment
+          .topAuthor Babe the Pig
+          .points 100
+          .topText Shank t-bone pork loin 
+        .comment
+          .topAuthor Babe the Pig
+          .points 100
+          .topText Shank t-bone pork loin 
+        .comment
+          .topAuthor Babe the Pig
+          .points 100
+          .topText Shank t-bone pork loin 
+        .comment
+          .topAuthor Babe the Pig
+          .points 100
+          .topText Shank t-bone pork loin 
+          br
+          br
     #column4
       #top-sites
-        | top sites, cuntnugget.
-        br
-        .site 
-          .title 
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title 
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title 
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title 
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title 
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title 
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title 
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title 
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title 
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
-        .site 
-          .title
-            a(href='beefribsham.com') beef ribs ham.com
-          .comment-number 42
+        .sectionTitle.topSites
+          | Top Sites
+        .commentScroller
+          br
+          .site 
+            .site-title 
+              a(href='beefribsham.com') beef ribs ham.com
+            .comment-number 42
+          .site
+            .site-title 
+              a(href='beefribsham.com') beef ribs ham.com
+            .comment-number 42
+          .site
+            .site-title 
+              a(href='beefribsham.com') beef ribs ham.com
+            .comment-number 42
+          .site
+            .site-title
+              a(href='beefribsham.com') beef ribs ham.com
+            .comment-number 42
+          .site
+            .site-title 
+              a(href='beefribsham.com') beef ribs ham.com
+            .comment-number 42
+          .site
+            .site-title 
+              a(href='beefribsham.com') beef ribs ham.com
+            .comment-number 42
+            br
+            br
       #firehose
-        | fuckin' firehouse, bitch. click one of these bitches and be taken to the website
-        br
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pig
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pig
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pig
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pige
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pig
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pig
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pig
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pige
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pig
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pig
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pig
-          .text Shank t-bone pork loin
-        .comment
-          a(href='beefribsham.com') beef ribs ham.com
-          .author Babe the Pige
-          .text Shank t-bone pork loin
+        .sectionTitle.fireHose
+          | Firehose
+        .commentScroller
+          br
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pig
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pig
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pig
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pige
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pig
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pig
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pig
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pige
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pig
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pig
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pig
+            .text Shank t-bone pork loin
+          .comment
+            a(href='beefribsham.com') beef ribs ham.com
+            .author Babe the Pige
+            .text Shank t-bone pork loin
+          br
+          br
   #footer
   
   script(type='text/javascript')
    $(function()
    {
-    $('#column1').jScrollPane();
-    $('#column2').jScrollPane();
-    $('#column3').jScrollPane();
-    $('#top-sites').jScrollPane();
-    $('#firehose').jScrollPane();
+    $('.commentScroller').jScrollPane({showArrows:true});
    });

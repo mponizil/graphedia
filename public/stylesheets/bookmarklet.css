@@ -123,6 +123,7 @@
   -webkit-box-shadow: 0 0 3px #888 !important;
   box-shadow: 0 0 3px #888 !important;
   position: relative !important;
+  left: 1px;
 } 
 #graphedia_container .new-comment {
   position: relative !important;
@@ -167,6 +168,9 @@
 }
 #graphedia_container .top-level > li:first-child > .comment-parent > .comment-container {
   margin-top: 13px !important;
+}
+#graphedia_container .top-level > li:first-child > .comment-parent > .new-comment-container {
+ left: 0px !important;
 }
 #graphedia_container .top-level {
   border: none !important;
