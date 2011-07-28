@@ -238,6 +238,7 @@ body{
   word-wrap: break-word;
   position: relative;
   padding: 10px;
+  padding-bottom: 20px;
   font-size: 12px;
   font-weight: normal;
   box-shadow: inset 0px -1px 6px black;
