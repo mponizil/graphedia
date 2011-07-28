@@ -240,6 +240,7 @@ body{
   font-size: 12px;
   font-weight: normal;
   box-shadow: inset 0px -1px 6px black;
+  cursor: pointer;
 }
 .myCommentText{
   display: inline;
