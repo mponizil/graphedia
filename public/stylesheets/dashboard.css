@@ -324,9 +324,6 @@ body{
   text-overflow: ellipsis;
   padding-top: 2px;
 }
-.original a, a:visited{
-  font-size: 12px;
-}
 .author{
   font-size: 11px;
   padding-bottom: 3px;
@@ -337,7 +334,8 @@ body{
   display: block;
 }
 .black{
-  color: black;
+  font-size: 12px !important;
+  color: black !important;
 }
 #footer { 
   background: #999;

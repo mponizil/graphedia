@@ -23,7 +23,7 @@ script(src='/javascripts/dashboard.js')
         .commentScroller
           br
           - my_comments.forEach(function(comment) {
-          .myComment(id='mc_'+comment._id)
+          .myComment(id='mc_'+comment._id, js_value=comment.page_url)
             .myCommentUps #{comment.ups}
             .myCommentText #{comment.body} 
           - })
@@ -36,13 +36,12 @@ script(src='/javascripts/dashboard.js')
           | My Replies
         .commentScroller
           - replies_to_me.forEach(function(reply) {
-          .reply(id='reply_'+reply._id)
+          .reply(id='reply_'+reply._id,js_value=reply.page_url)
             .author #{reply.author} 
               span.black said
             .text "#{reply.body}"
             .original 
-              | in reply to
-              a(href=reply.page_url) #{reply.parent_body}
+              | in reply to #{reply.parent_body}
           - })
 
           br
