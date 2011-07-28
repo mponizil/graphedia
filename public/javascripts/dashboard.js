@@ -6,8 +6,9 @@ socket.on('firehose', function(data) {
   var comment = $('<div>').addClass('firehose-comment').attr('js_value',data.page_url).attr('id','fh_' + data.comment_id);
   var author = $('<div>').addClass('author').html(data.author);
   var text = $('<div>').addClass('text').html(data.comment)
+  var url = $('<div>').addClass('commentUrl').html(data.stripped_url);
   
-  comment.append(author,text);
+  comment.append(author,text,url);
   
   // dont worry about this selector bein fuxxed right now
   $('#column4 .jspPane').prepend(comment);
@@ -19,9 +20,10 @@ socket.on('reply', function(data) {
   var span = $('<span>').addClass('black').html('said')
   var text = $('<div>').addClass('text').html(data.comment);
   var original = $('<div>').addClass('original').html('in reply to ' + data.parent_body);
+  var url = $('<div>').addClass('commentUrl').html(data.stripped_url);
   
   author.append(span);
-  reply.append(author,text,original);
+  reply.append(author,text,original,url);
   
   // dont worry about this selector bein fuxxed right now
   $('#firehose .jspPane').prepend(reply);

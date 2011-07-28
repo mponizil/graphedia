@@ -26,7 +26,7 @@ script(src='/javascripts/dashboard.js')
           .myComment(id='mc_'+comment._id, js_value=comment.page_url)
             .myCommentUps #{comment.ups}
             .myCommentText #{comment.body}
-            .commentUrl
+            .commentUrl #{comment.stripped_url}
           - })
           br
           br
@@ -43,7 +43,7 @@ script(src='/javascripts/dashboard.js')
             .text "#{reply.body}"
             .original 
               | in reply to #{reply.parent_body}
-            .commentUrl
+            .commentUrl #{reply.stripped_url}
           - })
 
           br
@@ -55,7 +55,7 @@ script(src='/javascripts/dashboard.js')
         .commentScroller
           .site(js_value='beefribsham.com')
              .site-title 
-             | beef ribs ham.com //shorten this with stripChars as well
+             | beef ribs ham.com
              .comment-number 42
              br
              br
@@ -70,7 +70,7 @@ script(src='/javascripts/dashboard.js')
             .topAuthor #{comment.author}
             .points #{comment.ups}
             .topText #{comment.body}
-            .commentUrl
+            .commentUrl #{comment.stripped_url}
           - })
           br
           br
@@ -83,7 +83,7 @@ script(src='/javascripts/dashboard.js')
           .firehose-comment(js_value=comment.page_url)
             .author #{comment.author}
             .text #{comment.body}
-            .commentUrl
+            .commentUrl #{comment.stripped_url}
           - })
           br
           br

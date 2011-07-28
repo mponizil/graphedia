@@ -11,6 +11,9 @@
 	vertical-align: baseline !important;
 	text-align: left !important;
 }
+#graphedia_container form {
+  display: block !important;
+}
 
 
 /*
