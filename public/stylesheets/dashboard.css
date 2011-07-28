@@ -196,6 +196,9 @@ body{
   padding-top:39px !important;
   height: 0px !important;
 }
+#firehose .comment{
+  margin-left: 10px;
+}
 .commentScroller{
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -228,7 +231,7 @@ body{
 .myComment{
   margin: 0 auto;
   margin-bottom: 15px;
-  width: 200px;
+  width: 190px;
   background: white;
   word-wrap: break-word;
   position: relative;
@@ -257,7 +260,7 @@ body{
 .comment, .reply, .site{
   margin: 0 auto;
   margin-bottom: 15px;
-  width: 200px;
+  width: 190px;
   background: white;
   word-wrap: break-word;
   position: relative;

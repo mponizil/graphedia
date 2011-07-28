@@ -13,8 +13,8 @@ script(src='/javascripts/mousewheel.js')
 
   #section1
     #column1
-      .sectionWrapper
-        .sectionTitle.myComments
+      #top-sites.sectionWrapper
+        .sectionTitle.topSites
           | My Comments
         .commentScroller
           br
@@ -25,9 +25,10 @@ script(src='/javascripts/mousewheel.js')
           - })
           br
           br
-    #column2
-      .sectionWrapper
-        .sectionTitle.myReplies
+ 
+       
+      #firehose.sectionWrapper
+        .sectionTitle.fireHose
           | My Replies
         .commentScroller
           br
@@ -40,7 +41,39 @@ script(src='/javascripts/mousewheel.js')
           - })
 
           br
+          br  
+    #column2
+      .sectionWrapper
+        .sectionTitle.myReplies
+          | Top Sites
+        .commentScroller
           br
+          .site
+             .site-title 
+               a(href='beefribsham.com') beef ribs ham.com
+             .comment-number 42
+           .site
+             .site-title 
+               a(href='beefribsham.com') beef ribs ham.com
+             .comment-number 42
+           .site
+             .site-title 
+               a(href='beefribsham.com') beef ribs ham.com
+             .comment-number 42
+           .site
+             .site-title
+               a(href='beefribsham.com') beef ribs ham.com
+             .comment-number 42
+           .site
+             .site-title 
+               a(href='beefribsham.com') beef ribs ham.com
+             .comment-number 42
+           .site
+             .site-title 
+               a(href='beefribsham.com') beef ribs ham.com
+             .comment-number 42
+             br
+             br
   #section2
     #column3
       .sectionWrapper
@@ -57,39 +90,8 @@ script(src='/javascripts/mousewheel.js')
           br
           br
     #column4
-      #top-sites.sectionWrapper
-        .sectionTitle.topSites
-          | Top Sites
-        .commentScroller
-          br
-          .site 
-            .site-title 
-              a(href='beefribsham.com') beef ribs ham.com
-            .comment-number 42
-          .site
-            .site-title 
-              a(href='beefribsham.com') beef ribs ham.com
-            .comment-number 42
-          .site
-            .site-title 
-              a(href='beefribsham.com') beef ribs ham.com
-            .comment-number 42
-          .site
-            .site-title
-              a(href='beefribsham.com') beef ribs ham.com
-            .comment-number 42
-          .site
-            .site-title 
-              a(href='beefribsham.com') beef ribs ham.com
-            .comment-number 42
-          .site
-            .site-title 
-              a(href='beefribsham.com') beef ribs ham.com
-            .comment-number 42
-            br
-            br
-      #firehose.sectionWrapper
-        .sectionTitle.fireHose
+      .sectionWrapper
+        .sectionTitle.myComments
           | Firehose
         .commentScroller
           br
@@ -101,6 +103,9 @@ script(src='/javascripts/mousewheel.js')
           - })
           br
           br
+
+    
+        
   #footer
   
   script(type='text/javascript')
