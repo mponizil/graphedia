@@ -36,6 +36,6 @@ $(".firehose-comment").live("mouseover mouseout click", function(event) {
   } else if (event.type == "mouseout") {
     $(this).css({'border': 'none', 'margin-top': '0px', 'margin-bottom': '15px'})
   } else {
-    window.location = $(this).attr('js_value');
+    window.open($(this).attr('js_value'), '_newtab');
   }
 });
