@@ -98,8 +98,7 @@ script(src='/javascripts/dashboard.js')
           | Firehose
         .commentScroller
           - latest_comments.forEach(function(comment) {
-          .comment
-            a(href=comment.page_url) #{comment.page_url}
+          .firehose-comment(js_value=comment.page_url)
             .author #{comment.author}
             .text #{comment.body}
           - })
@@ -109,9 +108,3 @@ script(src='/javascripts/dashboard.js')
     
         
   #footer
-  
-  script(type='text/javascript')
-   $(function()
-   {
-    $('.commentScroller').jScrollPane({showArrows:true});
-   });
