@@ -269,6 +269,7 @@ body{
   font-size: 12px;
   font-weight: normal;
   box-shadow: inset 0px 0px 6px black;
+  cursor: pointer;
 }
 .text{
   display: inline;
