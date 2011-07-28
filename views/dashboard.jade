@@ -52,29 +52,9 @@ script(src='/javascripts/dashboard.js')
         .sectionTitle.myReplies
           | Top Sites
         .commentScroller
-          .site
+          .site(js_value='beefribsham.com')
              .site-title 
-               a(href='beefribsham.com') beef ribs ham.com
-             .comment-number 42
-           .site
-             .site-title 
-               a(href='beefribsham.com') beef ribs ham.com
-             .comment-number 42
-           .site
-             .site-title 
-               a(href='beefribsham.com') beef ribs ham.com
-             .comment-number 42
-           .site
-             .site-title
-               a(href='beefribsham.com') beef ribs ham.com
-             .comment-number 42
-           .site
-             .site-title 
-               a(href='beefribsham.com') beef ribs ham.com
-             .comment-number 42
-           .site
-             .site-title 
-               a(href='beefribsham.com') beef ribs ham.com
+             | beef ribs ham.com
              .comment-number 42
              br
              br
@@ -85,7 +65,7 @@ script(src='/javascripts/dashboard.js')
           | Top Comments
         .commentScroller
           - top_comments.forEach(function(comment) {
-          .top-comment(id='top_'+comment._id,js_value=comment.page_url)
+          .top-comment(id='top_'+comment._id, js_value=comment.page_url)
             .topAuthor #{comment.author}
             .points #{comment.ups}
             .topText #{comment.body}
