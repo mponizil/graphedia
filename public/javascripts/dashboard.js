@@ -92,3 +92,19 @@ $(".reply").live("mouseover mouseout click", function(event) {
     window.open($(this).attr('js_value'), '_newtab');
   }
 });
+
+stripChars = function(url){
+  var endIndex = url.indexOf("/")
+  var startIndex = url.indexOf("www.", 0)
+  if (startIndex == -1){
+    startIndex = 0;
+  } else {
+    startIndex = 4;
+  }
+  if (endIndex == -1){
+    url = url.substring(startIndex);
+  } else {
+    url = url.substring(startIndex, endIndex);
+  }
+  return url;
+}
