@@ -310,6 +310,30 @@ body{
   color: white;
   box-shadow: 0px 0px 2px black;
 }
+.original{
+  color:#A09E9B;
+  font-size: 10px;
+  width: 100%;
+  overflow: hidden;
+  height: 13px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-top: 2px;
+}
+.original a, a:visited{
+  font-size: 12px;
+}
+.author{
+  font-size: 11px;
+  padding-bottom: 3px;
+  color: #B4241D;
+}
+.text{
+  padding-left: 5px;
+}
+.black{
+  color: black;
+}
 #footer { 
   background: #999;
   clear: both;

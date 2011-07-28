@@ -37,7 +37,8 @@ script(src='/javascripts/dashboard.js')
         .commentScroller
           - replies_to_me.forEach(function(reply) {
           .reply
-            .author #{reply.author} <span class='black'> said</span>
+            .author #{reply.author}
+              span.black  said
             .text "#{reply.body}"
             .original 
               | in reply to
