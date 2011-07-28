@@ -238,6 +238,7 @@ body{
   word-wrap: break-word;
   position: relative;
   padding: 10px;
+  padding-bottom: 20px;
   font-size: 12px;
   font-weight: normal;
   box-shadow: inset 0px -1px 6px black;
@@ -272,6 +273,7 @@ body{
   font-weight: normal;
   box-shadow: inset 0px 0px 6px black;
   cursor: pointer;
+  padding-bottom: 20px;
 }
 .text{
   display: inline;
@@ -343,4 +345,12 @@ body{
 #footer { 
   background: #999;
   clear: both;
+}
+.commentUrl{
+  padding-top: 3px;
+  display: block;
+  font-size: 10px;
+  float: right;
+  position: relative;
+  color: #BABABA;
 }

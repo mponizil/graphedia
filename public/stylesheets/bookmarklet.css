@@ -88,8 +88,9 @@
  */
 #graphedia_container #mini-dash {
   width:100% !important;
-  height: 26px !important;
+  height: 20px !important;
   padding:8px 0 !important;
+  padding-left: 20px !important;
   background:rgba(0,0,0,0.6) !important;
   color:#fff !important;
   position:fixed !important;
@@ -236,13 +237,14 @@
 #graphedia_container .up-arrow{
   border-color: transparent transparent green !important;
   border-style: solid !important;
-  border-width: 0 8px 9px !important;
-  height: 0 !important;
-  width: 0 !important;
+  border-width: 0 6px 7px !important;
+  height: 17px !important;
+  width: 1px !important;
   position: absolute !important;
-  top: 4px !important;
+  top: -12px !important;
   left: 212px !important;
   cursor: pointer;
+  opacity: .5;
 }
 
 /*
