@@ -41,7 +41,7 @@ $(function() {
 
 $(".firehose-comment").live("mouseover mouseout click", function(event) {
   if ( event.type == "mouseover" ) {
-    $(this).css({'border': '3px solid red', 'border-radius':'5px', 'margin-top': '-3px', 'margin-bottom': '12px'})
+    $(this).css({'border': '3px solid #FF57E3', 'border-radius':'5px', 'margin-top': '-3px', 'margin-bottom': '12px'})
   } else if (event.type == "mouseout") {
     $(this).css({'border': 'none', 'margin-top': '0px', 'margin-bottom': '15px'})
   } else {
@@ -52,6 +52,16 @@ $(".firehose-comment").live("mouseover mouseout click", function(event) {
 $(".top-comment").live("mouseover mouseout click", function(event) {
   if ( event.type == "mouseover" ) {
     $(this).css({'border': '3px solid #00FF10', 'border-radius':'5px', 'margin-top': '-3px', 'margin-bottom': '12px'})
+  } else if (event.type == "mouseout") {
+    $(this).css({'border': 'none', 'margin-top': '0px', 'margin-bottom': '15px'})
+  } else {
+    window.open($(this).attr('js_value'), '_newtab');
+  }
+});
+
+$(".site").live("mouseover mouseout click", function(event) {
+  if ( event.type == "mouseover" ) {
+    $(this).css({'border': '3px solid #00FAFF', 'border-radius':'5px', 'margin-top': '-3px', 'margin-bottom': '12px'})
   } else if (event.type == "mouseout") {
     $(this).css({'border': 'none', 'margin-top': '0px', 'margin-bottom': '15px'})
   } else {
