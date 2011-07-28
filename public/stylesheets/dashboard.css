@@ -196,7 +196,7 @@ body{
   padding-top:39px !important;
   height: 0px !important;
 }
-#firehose .comment{
+.firehose-comment{
   margin-left: 10px;
 }
 .commentScroller{
@@ -258,7 +258,7 @@ body{
   color: white;
   box-shadow: 0px 0px 2px black;
 }
-.comment, .reply, .site{
+.comment, .reply, .site, .firehose-comment{
   margin: 0 auto;
   margin-bottom: 15px;
   width: 190px;
