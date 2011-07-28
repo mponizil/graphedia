@@ -34,9 +34,10 @@ script(src='/javascripts/mousewheel.js')
           br
           - replies_to_me.forEach(function(reply) {
           .reply
-            .author #{reply.author}
+            .author #{reply.author} <span class='black'> said</span>
             .text #{reply.body}
-            .original
+            .original 
+              | in reply to
               a(href=reply.page_url) #{reply.parent_body}
           - })
 
