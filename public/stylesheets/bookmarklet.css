@@ -9,6 +9,7 @@
 	font-size: 100% !important;
 	font: inherit !important;
 	vertical-align: baseline !important;
+	text-align: left !important;
 }
 
 
@@ -84,20 +85,21 @@
  */
 #graphedia_container #mini-dash {
   width:100% !important;
+  height: 26px !important;
   padding:8px 0 !important;
   background:rgba(0,0,0,0.6) !important;
   color:#fff !important;
   position:fixed !important;
   top:0 !important;
   left:0 !important;
-  display:none !important;
   font-size:13px !important;
-  z-index: 1000;
+  z-index: 1000 !important;
 }
 #graphedia_container iframe.remote-login {
   border:none !important;
   width:100% !important;
   height:30px !important;
+  overflow: hidden !important;
 }
   
 /*

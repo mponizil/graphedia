@@ -3,6 +3,7 @@ body {
   padding:0;
   font:14px 'Lucida Grande',Helvetica,Arial,sans-serif;
   color:#000;
+  overflow:hidden;
 }
 
 input[type='text'],
@@ -21,6 +22,15 @@ input[type='password'] {
 input[type='submit'],
 button {
   font-size:18px;
+}
+a {color: #5299C4;text-decoration:none;}
+a:active,
+a:visited {text-decoration: underline;color: #5299C4;}
+a:hover {color: #2F6270;}
+
+#mini-dash {
+  width:100%;
+  height:32px;
 }
 
 .register {

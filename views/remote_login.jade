@@ -22,11 +22,11 @@ html
         });
       })
   body
+  - if (access_token)
+    script
+      parent.postMessage({ access_token: '#{access_token}', _id: '#{_id}', username: '#{username}' }, '#{url}')
+  - else
     #mini-dash
-    - if (access_token)
-      script
-        parent.postMessage({ access_token: '#{access_token}', _id: '#{_id}', username: '#{username}' }, '#{url}')
-    - else
       .register
         a(href='http://www.graffidia.com',target='_blank') Register
       .login
