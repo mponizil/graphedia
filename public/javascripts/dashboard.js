@@ -14,15 +14,13 @@ socket.on('firehose', function(data) {
 })
 
 socket.on('reply', function(data) {
-  var reply = $('<div>').addClass('reply').attr('id','reply_' + data.comment_id);
+  var reply = $('<div>').addClass('reply').attr('js_value',data.page_url).attr('id','reply_' + data.comment_id);
   var author = $('<div>').addClass('author').html(data.author + ' ');
   var span = $('<span>').addClass('black').html('said')
   var text = $('<div>').addClass('text').html(data.comment);
-  var original = $('<div>').addClass('original').html('in reply to');
-  var a = $('<a>').attr('href',data.page_url).html(data.parent_body);
+  var original = $('<div>').addClass('original').html('in reply to ' + data.parent_body);
   
   author.append(span);
-  original.append(a);
   reply.append(author,text,original);
   
   // dont worry about this selector bein fuxxed right now
