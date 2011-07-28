@@ -10,7 +10,8 @@ socket.on('firehose', function(data) {
   
   comment.append(page_url,author,text);
   
-  $('#firehose .jspPane').prepend(comment);
+  // dont worry about this selector bein fuxxed right now
+  $('#column4 .jspPane').prepend(comment);
 })
 
 socket.on('reply', function(data) {
@@ -23,5 +24,10 @@ socket.on('reply', function(data) {
   original.append(a);
   reply.append(author,text,original);
   
-  $('#column2 .jspPane').prepend(reply);
+  // dont worry about this selector bein fuxxed right now
+  $('#firehose .jspPane').prepend(reply);
+})
+
+socket.on('my.upvote', function(data) {
+  $('#mc_' + data.comment_id + ' .myCommentUps').html(data.total_ups);
 })

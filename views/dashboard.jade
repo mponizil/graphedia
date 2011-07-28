@@ -23,7 +23,7 @@ script(src='/javascripts/dashboard.js')
         .commentScroller
           br
           - my_comments.forEach(function(comment) {
-          .myComment 
+          .myComment(id='mc_'+comment._id)
             .myCommentUps #{comment.ups}
             .myCommentText #{comment.body} 
           - })
