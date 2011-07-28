@@ -13,48 +13,51 @@ script(src='/javascripts/mousewheel.js')
 
   #section1
     #column1
-      .sectionTitle.myComments
-        | My Comments
-      .commentScroller
-        br
-        - my_comments.forEach(function(comment) {
-        .myComment 
-          .myCommentUps #{comment.ups}
-          .myCommentText #{comment.body} 
-        - })
-        br
-        br
+      .sectionWrapper
+        .sectionTitle.myComments
+          | My Comments
+        .commentScroller
+          br
+          - my_comments.forEach(function(comment) {
+          .myComment 
+            .myCommentUps #{comment.ups}
+            .myCommentText #{comment.body} 
+          - })
+          br
+          br
     #column2
-      .sectionTitle.myReplies
-        | My Replies
-      .commentScroller
-        br
-        - replies_to_me.forEach(function(reply) {
-        .reply
-          .author #{reply.author}
-          .text #{reply.body}
-          .original
-            a(href=reply.page_url) #{reply.parent_body}
-        - })
+      .sectionWrapper
+        .sectionTitle.myReplies
+          | My Replies
+        .commentScroller
+          br
+          - replies_to_me.forEach(function(reply) {
+          .reply
+            .author #{reply.author}
+            .text #{reply.body}
+            .original
+              a(href=reply.page_url) #{reply.parent_body}
+          - })
 
-        br
-        br
+          br
+          br
   #section2
     #column3
-      .sectionTitle.topComments
-        | Top Comments
-      .commentScroller
-        br
-        - top_comments.forEach(function(comment) {
-        .comment
-          .topAuthor #{comment.author}
-          .points #{comment.ups}
-          .topText #{comment.body}
-        - })
-        br
-        br
+      .sectionWrapper
+        .sectionTitle.topComments
+          | Top Comments
+        .commentScroller
+          br
+          - top_comments.forEach(function(comment) {
+          .comment
+            .topAuthor #{comment.author}
+            .points #{comment.ups}
+            .topText #{comment.body}
+          - })
+          br
+          br
     #column4
-      #top-sites
+      #top-sites.sectionWrapper
         .sectionTitle.topSites
           | Top Sites
         .commentScroller
@@ -85,7 +88,7 @@ script(src='/javascripts/mousewheel.js')
             .comment-number 42
             br
             br
-      #firehose
+      #firehose.sectionWrapper
         .sectionTitle.fireHose
           | Firehose
         .commentScroller

@@ -133,6 +133,16 @@ body{
   margin: 0 auto;
   text-align: left;
 }
+.sectionWrapper{
+  width: 95%;
+  height: 98%;
+  margin: 0 auto;
+  position: relative;
+  background: #4C4D4B;
+  margin-top: 6px;
+  border: 1px solid black;
+  overflow: hidden;
+}
 #section1 {
   float: left; 
   background: #ccc;
@@ -143,13 +153,13 @@ body{
 }
 #column1 {
   float: left; 
-  background: #4C4D4B;
+  background: #2C292A;
   width: 50%;
 
 }
 #column2 {
   float: right;
-  background: #4C4D4B;
+  background: #2C292A;
   width: 50%;
 }
 #section2 {
@@ -163,20 +173,24 @@ body{
 }
 #column3 {
   float: left;
-  background: #4C4D4B;
+  background: #2C292A;
   width: 50%;
 }
 #column4 {
   float: right;
-  background: #4C4D4B;
+  background: #2C292A;
   width: 50%;
   height: 100%;
 }
 #top-sites{
-  height: 30%;
+  margin-top: 6px;
+  height: 28%;
+  margin-left: 6px;
 }
 #firehose{
-  height: 70%;
+  margin-top: 6px;
+  height: 69.333333333333333%;
+  margin-left: 6px;
 }
 #firehose .jspArrowDown{
   padding-top:39px !important;
@@ -187,7 +201,7 @@ body{
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
   height: 100%;
-  margin-left: 10px;
+  margin: 0 auto;
   overflow: hidden;
 }
 .sectionTitle{
