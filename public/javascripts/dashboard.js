@@ -3,14 +3,14 @@ var socket = io.connect('http://' + URL + '/dashboard');
 socket.emit('users.confirm_socket', $.cookie('access_token'))
 
 socket.on('firehose', function(data) {
-  var comment = $('<div>').addClass('comment').attr('id','fh_' + data.comment_id);
-  var page_url = $('<a>').attr('href',data.page_url).html(data.page_url);
+  var comment = $('<div>').addClass('firehose-comment').attr('js_value',data.page_url).attr('id','fh_' + data.comment_id);
   var author = $('<div>').addClass('author').html(data.author);
   var text = $('<div>').addClass('text').html(data.comment)
   
-  comment.append(page_url,author,text);
+  comment.append(author,text);
   
-  $('#firehose .jspPane').prepend(comment);
+  // dont worry about this selector bein fuxxed right now
+  $('#column4 .jspPane').prepend(comment);
 })
 
 socket.on('reply', function(data) {
@@ -23,7 +23,16 @@ socket.on('reply', function(data) {
   original.append(a);
   reply.append(author,text,original);
   
-  $('#column2 .jspPane').prepend(reply);
+  // dont worry about this selector bein fuxxed right now
+  $('#firehose .jspPane').prepend(reply);
+})
+
+socket.on('my.upvote', function(data) {
+  $('#mc_' + data.comment_id + ' .myCommentUps').html(data.total_ups);
+})
+
+socket.on('top.upvote', function(data) {
+  $('#top_' + data.comment_id + ' .points').html(data.total_ups);
 })
 
 $(function() {
