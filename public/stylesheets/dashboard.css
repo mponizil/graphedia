@@ -63,7 +63,7 @@ body{
   width: 100%;
   top: 0;
   left: 0;
-  border-bottom: 3px dashed #8C8C8C;
+  border-bottom: 1px dashed #8C8C8C;
   background: black;
   overflow: hidden;
 }
@@ -143,13 +143,13 @@ body{
 }
 #column1 {
   float: left; 
-  background: #ccc;
+  background: #4C4D4B;
   width: 50%;
 
 }
 #column2 {
   float: right;
-  background: #ccc;
+  background: #4C4D4B;
   width: 50%;
 }
 #section2 {
@@ -163,12 +163,12 @@ body{
 }
 #column3 {
   float: left;
-  background: #ccc;
+  background: #4C4D4B;
   width: 50%;
 }
 #column4 {
   float: right;
-  background: #ccc;
+  background: #4C4D4B;
   width: 50%;
   height: 100%;
 }
@@ -196,6 +196,8 @@ body{
  text-align: center;
  background: #2A2829;
  color: #FFF8DB;
+ box-shadow: inset 0px -2px 17px black;
+ border-bottom: 1px solid black;
 }
 /*.myComments{
   background: #B9D7D9;
@@ -219,14 +221,24 @@ body{
   padding: 10px;
   font-size: 12px;
   font-weight: normal;
+  box-shadow: inset 0px -1px 6px black;
 }
 .myCommentText{
   display: inline;
 }
 .myCommentUps{
+  position: absolute;
+  top: -5px;
+  right: -4px;
+  background: #BD0F17;
+  border-radius: 5px;
+  height: 12px;
+  font-size: 10px;
+  text-shadow: 0px 1px 0px black;
+  padding: 2px 3px 2px 3px;
   display: inline;
-  color: #A51733;
-  padding-right: 5px;
+  color: white;
+  box-shadow: 0px 0px 2px black;
 }
 .comment, .reply, .site{
   margin: 0 auto;
@@ -238,6 +250,7 @@ body{
   padding: 10px;
   font-size: 12px;
   font-weight: normal;
+  box-shadow: inset 0px 0px 6px black;
 }
 .text{
   display: inline;
@@ -247,8 +260,18 @@ body{
   color: #A51733;
 }
 .points{
+  position: absolute;
+  top: -5px;
+  right: -4px;
+  background: #BD0F17;
+  border-radius: 5px;
+  height: 12px;
+  font-size: 10px;
+  text-shadow: 0px 1px 0px black;
+  padding: 2px 3px 2px 3px;
   display: inline;
-  float: right;
+  color: white;
+  box-shadow: 0px 0px 2px black;
 }
 .topText{
   display: block;
@@ -257,8 +280,18 @@ body{
   display: inline;
 }
 .comment-number{
+  position: absolute;
+  top: -5px;
+  right: -4px;
+  background: #BD0F17;
+  border-radius: 5px;
+  height: 12px;
+  font-size: 10px;
+  text-shadow: 0px 1px 0px black;
+  padding: 2px 3px 2px 3px;
   display: inline;
-  float: right;
+  color: white;
+  box-shadow: 0px 0px 2px black;
 }
 #footer { 
   background: #999;
