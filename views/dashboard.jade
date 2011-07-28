@@ -1,7 +1,11 @@
 link(rel='stylesheet',href='/stylesheets/dashboard.css')
 link(rel='stylesheet',href='/stylesheets/scrollpane.css')
+script(src='/socket.io/socket.io.js')
 script(src='/javascripts/scrollpane.js')
 script(src='/javascripts/mousewheel.js')
+script
+  var URL = '#{url}';
+script(src='/javascripts/dashboard.js')
 
 #wrapper
   #header
@@ -16,19 +20,15 @@ script(src='/javascripts/mousewheel.js')
       .sectionTitle.myComments
         | My Comments
       .commentScroller
-        br
         - my_comments.forEach(function(comment) {
         .myComment 
           .myCommentUps #{comment.ups}pts
           .myCommentText #{comment.body} 
         - })
-        br
-        br
     #column2
       .sectionTitle.myReplies
         | My Replies
       .commentScroller
-        br
         - replies_to_me.forEach(function(reply) {
         .reply
           .author #{reply.author}
@@ -36,29 +36,22 @@ script(src='/javascripts/mousewheel.js')
           .original
             a(href=reply.page_url) #{reply.parent_body}
         - })
-
-        br
-        br
   #section2
     #column3
       .sectionTitle.topComments
         | Top Comments
       .commentScroller
-        br
         - top_comments.forEach(function(comment) {
         .comment
           .topAuthor #{comment.author}
           .points #{comment.ups}
           .topText #{comment.body}
         - })
-        br
-        br
     #column4
       #top-sites
         .sectionTitle.topSites
           | Top Sites
         .commentScroller
-          br
           .site 
             .site-title 
               a(href='beefribsham.com') beef ribs ham.com
@@ -83,21 +76,16 @@ script(src='/javascripts/mousewheel.js')
             .site-title 
               a(href='beefribsham.com') beef ribs ham.com
             .comment-number 42
-            br
-            br
       #firehose
         .sectionTitle.fireHose
           | Firehose
         .commentScroller
-          br
           - latest_comments.forEach(function(comment) {
           .comment
             a(href=comment.page_url) #{comment.page_url}
             .author #{comment.author}
             .text #{comment.body}
           - })
-          br
-          br
   #footer
   
   script(type='text/javascript')

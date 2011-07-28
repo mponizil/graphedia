@@ -11,6 +11,10 @@ require('hash');
 var Graphedia = require('./lib/Graphedia');
 var Routes = require('./lib/Routes');
 
+// get that real time dash goin
+var RealTimeDash = require('./lib/RealTimeDash');
+var rtd = new RealTimeDash();
+
 var app = module.exports = express.createServer();
 
 // configuration
@@ -59,10 +63,13 @@ console.log("Express server listening on port %d in %s mode", app.address().port
 
 // socket.io begins
 var io = require('socket.io').listen(app);
-io.set('log level',2)
+io.set('log level',2);
 
-io.sockets.on('connection', function(socket) {
-  var graphedia = new Graphedia(socket);
+var bmlet = io.of('/bmlet');
+var dashboard = io.of('/dashboard');
+
+bmlet.on('connection', function(socket) {
+  var graphedia = new Graphedia(socket, rtd);
   
   socket.on('graphedia.init', function(url, fn) {
     graphedia.init(url, fn)
@@ -77,11 +84,9 @@ io.sockets.on('connection', function(socket) {
     graphedia.confirm_socket(access_token, socket.id);
   })
   socket.on('comments.new', function(data, fn) {
-    Observer.new_event('comment', { parent_id: data.parent_id });
     graphedia.new_comment(data.access_token, data.parent_id, data.parent_author_id, data.comment, data.page_x, data.page_y, fn);
   })
   socket.on('comments.upvote', function(data, fn) {
-    Observer.new_event('upvote', { parent_id: data.parent_id, comment_id: data.comment_id });
     graphedia.upvote(data.access_token, data.parent_id, data.comment_id, fn)
   })
   
@@ -90,8 +95,17 @@ io.sockets.on('connection', function(socket) {
   })
 })
 
-var Observer = {
-  new_event: function(type, data) {
-    // console.log(type, data)
-  }
-}
+dashboard.on('connection', function(socket) {
+  
+  socket.on('users.confirm_socket', function(access_token) {
+    rtd.confirm_socket(access_token, socket.id, function(user_id) {
+      rtd.add_socket(user_id, socket);
+    });
+  })
+  
+  socket.on('disconnect', function() {
+    rtd.kill_auth(socket.id, function(user_id) {
+      rtd.remove_socket(user_id);
+    });
+  })
+})
