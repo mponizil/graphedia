@@ -22,7 +22,6 @@ script(src='/javascripts/dashboard.js')
         .sectionTitle.topSites
           | My Comments
         .commentScroller
-          br
           - my_comments.forEach(function(comment) {
           .myComment(id='mc_'+comment._id, js_value=comment.page_url)
             .myCommentUps #{comment.ups}
