@@ -206,6 +206,7 @@ body{
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
+  padding-top: 10px;
 }
 .sectionTitle{
  padding: 10px;
@@ -275,6 +276,7 @@ body{
 .topAuthor{
   display: inline;
   color: #A51733;
+  font-size: 11px;
 }
 .points{
   position: absolute;
@@ -292,6 +294,8 @@ body{
 }
 .topText{
   display: block;
+  padding-left: 5px;
+  padding-top: 3px;
 }
 .site-title{
   display: inline;
@@ -330,6 +334,7 @@ body{
 }
 .text{
   padding-left: 5px;
+  display: block;
 }
 .black{
   color: black;

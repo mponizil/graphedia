@@ -31,11 +31,10 @@ script(src='/javascripts/mousewheel.js')
         .sectionTitle.fireHose
           | My Replies
         .commentScroller
-          br
           - replies_to_me.forEach(function(reply) {
           .reply
             .author #{reply.author} <span class='black'> said</span>
-            .text #{reply.body}
+            .text "#{reply.body}"
             .original 
               | in reply to
               a(href=reply.page_url) #{reply.parent_body}
@@ -48,7 +47,6 @@ script(src='/javascripts/mousewheel.js')
         .sectionTitle.myReplies
           | Top Sites
         .commentScroller
-          br
           .site
              .site-title 
                a(href='beefribsham.com') beef ribs ham.com
@@ -81,7 +79,6 @@ script(src='/javascripts/mousewheel.js')
         .sectionTitle.topComments
           | Top Comments
         .commentScroller
-          br
           - top_comments.forEach(function(comment) {
           .comment
             .topAuthor #{comment.author}
@@ -95,7 +92,6 @@ script(src='/javascripts/mousewheel.js')
         .sectionTitle.myComments
           | Firehose
         .commentScroller
-          br
           - latest_comments.forEach(function(comment) {
           .comment
             a(href=comment.page_url) #{comment.page_url}
