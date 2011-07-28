@@ -1,3 +1,49 @@
+jQuery.fn.sortElements = (function(){
+ 
+    var sort = [].sort;
+ 
+    return function(comparator, getSortable) {
+ 
+        getSortable = getSortable || function(){return this;};
+ 
+        var placements = this.map(function(){
+ 
+            var sortElement = getSortable.call(this),
+                parentNode = sortElement.parentNode,
+ 
+                // Since the element itself will change position, we have
+                // to have some way of storing its original position in
+                // the DOM. The easiest way is to have a 'flag' node:
+                nextSibling = parentNode.insertBefore(
+                    document.createTextNode(''),
+                    sortElement.nextSibling
+                );
+ 
+            return function() {
+ 
+                if (parentNode === this) {
+                    throw new Error(
+                        "You can't sort elements if any one is a descendant of another."
+                    );
+                }
+ 
+                // Insert before flag:
+                parentNode.insertBefore(this, nextSibling);
+                // Remove flag:
+                parentNode.removeChild(nextSibling);
+ 
+            };
+ 
+        });
+ 
+        return sort.call(this, comparator).each(function(i){
+            placements[i].call(getSortable.call(this));
+        });
+ 
+    };
+ 
+})();
+
 var socket = io.connect('http://' + URL + '/dashboard');
 
 socket.emit('users.confirm_socket', $.cookie('access_token'))
@@ -15,11 +61,13 @@ socket.on('firehose', function(data) {
 
 socket.on('reply', function(data) {
   var reply = $('<div>').addClass('reply').attr('id','reply_' + data.comment_id);
-  var author = $('<div>').addClass('author').html(data.author);
+  var author = $('<div>').addClass('author').html(data.author + ' ');
+  var span = $('<span>').addClass('black').html('said')
   var text = $('<div>').addClass('text').html(data.comment);
-  var original = $('<div>').addClass('original');
+  var original = $('<div>').addClass('original').html('in reply to');
   var a = $('<a>').attr('href',data.page_url).html(data.parent_body);
   
+  author.append(span);
   original.append(a);
   reply.append(author,text,original);
   
@@ -33,6 +81,10 @@ socket.on('my.upvote', function(data) {
 
 socket.on('top.upvote', function(data) {
   $('#top_' + data.comment_id + ' .points').html(data.total_ups);
+  
+  $('#column3 .jspPane').sortElements(function(a, b) {
+    return $(a).find('.points').text() > $(b).find('.points').text() ? 1 : -1;
+  })
 })
 
 $(function() {
