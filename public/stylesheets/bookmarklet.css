@@ -88,8 +88,9 @@
  */
 #graphedia_container #mini-dash {
   width:100% !important;
-  height: 26px !important;
+  height: 20px !important;
   padding:8px 0 !important;
+  padding-left: 20px !important;
   background:rgba(0,0,0,0.6) !important;
   color:#fff !important;
   position:fixed !important;
