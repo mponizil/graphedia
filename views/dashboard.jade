@@ -41,8 +41,7 @@ script(src='/javascripts/dashboard.js')
               span.black said
             .text "#{reply.body}"
             .original 
-              | in reply to
-              a(href=reply.page_url) #{reply.parent_body}
+              | in reply to #{reply.parent_body}
           - })
 
           br
