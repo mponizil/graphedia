@@ -53,6 +53,7 @@ html, body{
   overflow: hidden;
 }
 body{
+  position: relative;
   background: black;
   text-align: center;
   font-family: helvetica;
@@ -115,7 +116,7 @@ body{
   padding: 20px;
 }
 #section1, #section2, #column4{ 
-  height: 80%;
+  height: 100%;
   overflow: hidden;
 }
 #column4, #column1, #column2, #column3, #top-sites, #firehose{
@@ -129,7 +130,7 @@ body{
 }
 #wrapper {
   width: 1000px;
-  height: 750px;
+  height: 85%;
   margin: 0 auto;
   text-align: left;
 }
@@ -184,12 +185,12 @@ body{
 }
 #top-sites{
   margin-top: 6px;
-  height: 28%;
+  height: 38%;
   margin-left: 6px;
 }
 #firehose{
   margin-top: 6px;
-  height: 69.333333333333333%;
+  height: 59.5%;
   margin-left: 6px;
 }
 #firehose .jspArrowDown{
@@ -237,6 +238,7 @@ body{
   word-wrap: break-word;
   position: relative;
   padding: 10px;
+  padding-bottom: 20px;
   font-size: 12px;
   font-weight: normal;
   box-shadow: inset 0px -1px 6px black;
@@ -271,6 +273,7 @@ body{
   font-weight: normal;
   box-shadow: inset 0px 0px 6px black;
   cursor: pointer;
+  padding-bottom: 20px;
 }
 .text{
   display: inline;
@@ -342,4 +345,12 @@ body{
 #footer { 
   background: #999;
   clear: both;
+}
+.commentUrl{
+  padding-top: 3px;
+  display: block;
+  font-size: 10px;
+  float: right;
+  position: relative;
+  color: #BABABA;
 }
