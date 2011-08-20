@@ -53,12 +53,14 @@ script(src='/javascripts/dashboard.js')
         .sectionTitle.myReplies
           | Top Sites
         .commentScroller
-          .site(js_value='beefribsham.com')
-             .site-title 
-             | beef ribs ham.com
-             .comment-number 42
-             br
-             br
+          - top_sites.forEach(function(top_site) {
+          .site(js_value=top_site.page_url)
+             .site-title #{top_site.stripped_url}
+             .comment-number #{top_site.num_comments}
+          - })
+          
+          br
+          br
   #section2
     #column3
       .sectionWrapper
